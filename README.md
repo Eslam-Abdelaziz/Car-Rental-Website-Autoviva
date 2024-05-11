@@ -64,12 +64,12 @@ To get started with the Attendance Management System, follow these steps:
 3. Make CarRent.Data as Startup project.
 4. Build the project to resolve any dependencies.
 4. open Package Manager Console type "update-database" and hit Enter.
-5. Make CarInsertData as Startup project and run the project.
-6. Make CarRental.UI as Startup project and run the project.
-7. if you want to access admin dashboard : right click on solution name.
-8. choose properties and select Multiple StartUp Projects option.
-9. select CarRental.API and AdminPanel then click ok.
-10. Run <Multiple StartUp Projects>.
+5. Make CarInsertData as Startup project then run the project.
+6. Make CarRental.UI as Startup project then run the project.
+7. if you want to access admin dashboard : open solution properties.
+8. select Multiple StartUp Projects option.
+9. select CarRental.API and AdminPanel as start.
+10. Run "Multiple StartUp Projects".
 
 ## Contributing
 
