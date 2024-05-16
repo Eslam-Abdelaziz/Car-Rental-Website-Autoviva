@@ -70,6 +70,8 @@ To get started with the Attendance Management System, follow these steps:
 8. select Multiple StartUp Projects option.
 9. select CarRental.API and AdminPanel as start.
 10. Run "Multiple StartUp Projects".
+11. add admin email and password using API
+12. login by them to adminn dashboard
 
 ## Contributing
 
