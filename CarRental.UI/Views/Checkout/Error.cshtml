@@ -1,0 +1,48 @@
+﻿@using CarRental.Data.Models.Entities;
+@model Payment;
+
+@{
+    ViewData["Title"] = "Payment Failed";
+}
+
+
+<div class="home">
+    <div class="home__bg"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="home__content">
+                    <div class="sign__content">
+
+                        <form  class="sign__form">
+                            <div class="header__content" style="display: flex; justify-content: center;">
+                                <div class="header__logo">
+                                    <a href="/">
+                                        <img src="/img/logo-black.svg" alt="">
+                                        <p style="text-align: center;"> Autoviva</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="custom-svg">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm1-13h4v6h-2V9h-2V7zm0 8h2v2h-2v-2z" />
+                            </svg>
+                            <h3 style="text-align:center;">Payment Failed!</h3>
+                            <p style="text-align:center;">Oops! Something went wrong with your payment.</p>
+                 
+                            <a href = "/Rentals/@Model.RentalId" class="sign__btn"><span>Continue To Rental.</span></a>
+                        </form>
+
+                  
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    ;
+</div>
+

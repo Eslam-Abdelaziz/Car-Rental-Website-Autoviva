@@ -1,0 +1,211 @@
+﻿@{
+    ViewData["Title"] = "Faq";
+}
+
+
+<div class="container">
+    <div class="row">
+        <!-- breadcrumb -->
+        <div class="col-12">
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item"><a asp-controller="Home" asp-action="index">Home</a></li>
+                <li class="breadcrumbs__item breadcrumbs__item--active">Frequently asked questions</li>
+            </ul>
+        </div>
+        <!-- end breadcrumb -->
+        <!-- title -->
+        <div class="col-12 col-xl-11">
+            <div class="main__title main__title--page">
+                <h1>Help center</h1>
+                <p>
+                    Here you will find answers to frequently asked questions about our company and services. If
+                    you don't find the answer to your question, please contact our customer support and we'll be
+                    happy to assist you. <a href="contacts.html">Ask a question</a>.
+                </p>
+            </div>
+        </div>
+        <!-- end title -->
+        <!-- accordion -->
+        <div class="col-12">
+            <div class="accordion" id="accordion">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="accordion__card">
+                            <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                How old do you have to be to rent a car?
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"></path>
+                                    </svg>
+                                </span>
+                            </button>
+
+                            <div id="collapse1" class="collapse" data-bs-parent="#accordion" style="">
+                                <p>
+                                    You are required to have a national ID card. <br>
+                                    The minimum age required is <b>18 years</b>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__card">
+                            <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                What´s required when renting a car?
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"></path>
+                                    </svg>
+                                </span>
+                            </button>
+
+                            <div id="collapse2" class="collapse" data-bs-parent="#accordion" style="">
+                                <p>
+                                    First you will sign a rental contract, to promise us that you will return the car
+                                    without any damages.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__card">
+                            <button class="" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+                                How do insurance coverages work for rental cars?
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"></path>
+                                    </svg>
+                                </span>
+                            </button>
+
+                            <div id="collapse5" class="collapse show" data-bs-parent="#accordion" style="">
+                                <p>
+                                    If you already have comprehensive coverage on your own car insurance policy, the value
+                                    of your rental car is covered even in the event of a total loss. You'll only be
+                                    responsible for the deductible, plus any added fees imposed by us.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__card">
+                            <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                What is an International Driving Permit and do I need one?
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"></path>
+                                    </svg>
+                                </span>
+                            </button>
+
+                            <div id="collapse4" class="collapse" data-bs-parent="#accordion">
+                                <p>
+                                    It is a license that allows you to drive a car in any other country, without any
+                                    restrictions. If you are not egyptian, you must have one. else you must have a local
+                                    driving Permit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <div class="accordion__card">
+                            <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                Can I rent a car without a credit card?
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"></path>
+                                    </svg>
+                                </span>
+                            </button>
+
+                            <div id="collapse3" class="collapse" data-bs-parent="#accordion" style="">
+                                <p>
+                                    There are many payment methods, you can pay with credit card or cash when you receive
+                                    the car.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__card">
+                            <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                What are the limits for excess insurance?
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"></path>
+                                    </svg>
+                                </span>
+                            </button>
+
+                            <div id="collapse6" class="collapse" data-bs-parent="#accordion" style="">
+                                <p>
+                                    The real excess value depends on the vehicle rental firm, the kind of car you choose,
+                                    and the place where you get the car. The amount is capped and is usually 10000 - 25000
+                                    EGP for common car types.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__card">
+                            <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                                What’s included in the rental fee?
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"></path>
+                                    </svg>
+                                </span>
+                            </button>
+
+                            <div id="collapse7" class="collapse" data-bs-parent="#accordion">
+                                <p>
+                                    The rental fees includes traffic or speeding charges, cleaning the car and refuelling.
+                                    These admin fees are charged on top of the cost of the actual fine or damage.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__card">
+                            <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                                What should I do in case of extra charges?
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"></path>
+                                    </svg>
+                                </span>
+                            </button>
+
+                            <div id="collapse8" class="collapse" data-bs-parent="#accordion">
+                                <p>
+                                    The extra charges includes handling damage in our partners workshop, but first you
+                                    must call us.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end accordion -->
+    </div>
+</div>

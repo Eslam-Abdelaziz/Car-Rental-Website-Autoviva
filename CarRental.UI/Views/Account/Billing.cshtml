@@ -1,0 +1,181 @@
+﻿@using CarRental.Data.Models.Entities;
+@{
+    ViewData["Title"] = "Billing";
+}
+@model Address
+<div class="container">
+    <div class="row">
+        <!-- breadcrumb -->
+        <div class="col-12">
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item"><a asp-controller="Home" asp-action="index">Home</a></li>
+                <li class="breadcrumbs__item breadcrumbs__item--active">
+                    My account
+                </li>
+            </ul>
+        </div>
+        <!-- end breadcrumb -->
+        <!-- title -->
+        <div class="col-12">
+            <div class="main__title main__title--page">
+                <h1>My account</h1>
+            </div>
+        </div>
+        <!-- end title -->
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="profile">
+                <!-- tabs nav -->
+                <ul class="nav nav-tabs profile__tabs" id="profile__tabs" role="tablist">
+
+                    <li class="nav-item" role="presentation">
+                        <a asp-controller="Account" asp-action="Rentals">
+
+                            <button class="" type="button" aria-selected="true">
+                                My Rentals
+                            </button>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+
+
+                        <a asp-controller="Account" asp-action="index">
+                            <button type="button" aria-selected="false" class="">
+                                Favorites
+                            </button>
+                        </a>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+
+                        <a asp-controller="Account" asp-action="Settings">
+                            <button type="button" aria-selected="false" class="">
+                                Settings
+                            </button>
+                        </a>
+
+                      
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                        <a asp-controller="Account" asp-action="Billing">
+                            <button type="button" aria-selected="true" class="active">
+                                Billing
+                            </button>
+
+                        </a>
+                    </li>
+                </ul>
+                <!-- end tabs nav -->
+            </div>
+
+            <!-- content tabs -->
+            <div class="tab-content">
+
+                <div class="tab-pane fade active show" id="tab-4" role="tabpanel" tabindex="0">
+                    <div class="row">
+                        <!-- details form -->
+                        <div class="col-12">
+                            <form asp-controller="Account" asp-action="Billing" class="sign__form sign__form--profile">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4 class="sign__title">Adress details</h4>
+                  
+                                    </div>
+
+                                    @if (ViewBag.IsUpdated != null)
+                                    {
+                                        @if (ViewBag.IsUpdated)
+                                        {
+                                            <span class="text-success" style="margin-left: 7px;margin-bottom:10px;">Address has been updated successfully. </span>
+                                        }
+
+                                    }
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="sign__group">
+                                            <label class="sign__label" for="street">Street</label>
+                                            <input id="street"
+                                                   type="text"
+                                                   name="Street"
+                                                   class="sign__input"
+                                                   placeholder="alnozha st." value="@Model.Street" />
+                                            <span class="text-danger" style="margin-left: 7px;margin-top:3px;" asp-validation-for="Street"></span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="sign__group">
+                                            <label class="sign__label" for="city">City</label>
+                                            <input id="city"
+                                                   type="text"
+                                                   name="city"
+                                                   class="sign__input"
+                                                   placeholder="nasr city" value="@Model.City" />
+                                            <span class="text-danger" style="margin-left: 7px;margin-top:3px;" asp-validation-for="City"></span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="sign__group">
+                                            <label class="sign__label" for="state">State</label>
+                                            <input id="state"
+                                                   type="text"
+                                                   name="state"
+                                                   class="sign__input"
+                                                   placeholder="cairo" value="@Model.State" />
+                                            <span class="text-danger" style="margin-left: 7px;margin-top:3px;" asp-validation-for="State"></span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="sign__group">
+                                            <label class="sign__label" for="zip-code">Zip code</label>
+                                            @{
+                                                var zip = Model.ZipCode == 0 ? "" : Model.ZipCode.ToString();
+                                            }
+
+                                            <input id="zip-code"
+                                                   type="text"
+                                                   name="zipcode"
+                                                   class="sign__input"
+                                                   placeholder="11765" value="@zip" />
+                                            <span class="text-danger" style="margin-left: 7px;margin-top:3px;" asp-validation-for="ZipCode"></span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="sign__group">
+                                            <label class="sign__label" for="phone">Phone</label>
+                                            <input id="phone"
+                                                   type="text"
+                                                   name="phone"
+                                                   class="sign__input"
+                                                   placeholder="+201060017494" value="@Model.Phone" />
+                                            <span class="text-danger" style="margin-left: 7px;margin-top:3px;" asp-validation-for="Phone"></span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button class="sign__btn" type="submit" value="submit">
+                                            <span>Save</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- end details form -->
+                    </div>
+
+                </div>
+            </div>
+            <!-- end content tabs -->
+        </div>
+    </div>
+</div>

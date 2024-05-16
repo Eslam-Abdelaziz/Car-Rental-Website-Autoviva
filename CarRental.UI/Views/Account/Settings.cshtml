@@ -1,0 +1,214 @@
+﻿@model SettingsViewModel;
+
+@{
+    ViewData["Title"] = "Settings";
+    var PasswordView = Model.PasswordChange;
+    var ProfileView = Model.ProfileDetails;
+
+    var PasswordHead = Model.ProfileDetails.IsEmptyPassword ? "Create" : "Change";
+}
+
+<div class="container">
+    <div class="row">
+        <!-- breadcrumb -->
+        <div class="col-12">
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item"><a asp-controller="Home" asp-action="index">Home</a></li>
+                <li class="breadcrumbs__item breadcrumbs__item--active">
+                    My account
+                </li>
+            </ul>
+        </div>
+        <!-- end breadcrumb -->
+        <!-- title -->
+        <div class="col-12">
+            <div class="main__title main__title--page">
+                <h1>My account</h1>
+            </div>
+        </div>
+        <!-- end title -->
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="profile">
+                <!-- tabs nav -->
+                <ul class="nav nav-tabs profile__tabs" id="profile__tabs" role="tablist">
+
+                    <li class="nav-item" role="presentation">
+                        <a asp-controller="Account" asp-action="Rentals">
+
+                            <button class="" type="button"  aria-selected="true">
+                                My Rentals
+                            </button>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        
+                        
+                        <a asp-controller="Account" asp-action="index">
+                            <button type="button" aria-selected="false"  >
+                                Favorites
+                            </button>
+                        </a>
+                       
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+
+                        <a asp-controller="Account" asp-action="Settings">
+                            <button type="button"  aria-selected="true" class="active">
+                                Settings
+                            </button>
+                        </a>
+                     
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                        <a asp-controller="Account" asp-action="Billing">
+                            <button type="button"aria-selected="false">
+                                Billing
+                            </button>
+
+                        </a>
+                    </li>
+                </ul>
+                <!-- end tabs nav -->
+            </div>
+
+            <!-- content tabs -->
+            <div class="tab-content">
+
+
+
+
+                <div class="tab-pane fade active show" id="tab-3" role="tabpanel" tabindex="0">
+                    <div class="row">
+                    
+                        <!-- details form -->
+                        <div class="col-12 col-lg-6">
+                            <form asp-controller="Account" asp-action = "Updateinfo" class="sign__form sign__form--profile">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4 class="sign__title">Profile details</h4>
+                                    </div>
+                              
+                                    <div class="col-12 col-md-6 col-lg-12 col-xl-6">
+                                        <div class="sign__group">
+                                            <label class="sign__label" for="email1">Email</label>
+                                            <input id="email1" type="text" name="email" class="sign__input" value="@Model.ProfileDetails.Email" placeholder="email@email.com">
+                                            @Html.ValidationMessage("Email", new { @class = "text-danger" ,@style="margin-left: 7px;margin-top:3px;"})
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-12 col-xl-6">
+                                        <div class="sign__group">
+                                            <label class="sign__label" for="firstname">First name</label>
+                                            <input id="firstname" type="text" name="firstname" value="@Model.ProfileDetails.Firstname" class="sign__input" placeholder="John">
+                                            @Html.ValidationMessage("Firstname", new { @class = "text-danger" ,@style="margin-left: 7px;margin-top:3px;"})
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-12 col-xl-6">
+                                        <div class="sign__group">
+                                            <label class="sign__label" for="lastname">Last name</label>
+                                            <input id="lastname" type="text" name="lastname" value="@Model.ProfileDetails.Lastname" class="sign__input" placeholder="Doe">
+                                            @Html.ValidationMessage("Lastname", new { @class = "text-danger" ,@style="margin-left: 7px;margin-top:3px;"})
+
+                                        </div>
+                                    </div>
+
+                                    @Html.ValidationMessage("CustomError", new { @class = "text-danger"})
+
+                                    @if (Model.ProfileDetails.IsChanged)
+                                    {
+                                        <span class="text-success" style="margin-left: 7px;margin-top:3px;">Profile details has been updated successfully.</span>
+                                       
+                                    }
+                                    @if(Model.ProfileDetails.IsEmailChanged)
+                                    {
+                                        <span class="text-success" style="margin-left: 7px;margin-top:3px;">an email has been sent to your email for changing the email.</span>
+                                    }
+                                    <div class="col-12">
+                                        <button type="submit" value="submit" class="sign__btn" >
+                                            <span>Save</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- end details form -->
+                        <!-- password form -->
+                        <div class="col-12 col-lg-6">
+                            <form asp-controller="account" asp-action="Changepassword" class="sign__form sign__form--profile">
+                                <div class="row">
+                                    <div class="col-12">
+
+                                        <h4 class="sign__title">@PasswordHead Password</h4>
+                                    </div>
+
+                                   
+                                       
+                                        
+                                        @if (!Model.ProfileDetails.IsEmptyPassword)
+                                            { 
+                                                <div class="col-12 col-md-6 col-lg-12 col-xl-6">
+                                                <div class="sign__group">
+                                                    <label class="sign__label" for="oldpass">Old password</label>
+                                                    <input id="CurrentPassword" type="password" value="@Model.PasswordChange?.CurrentPassword" name="CurrentPassword" class="sign__input">
+                                                    @Html.ValidationMessage("CurrentPassword", new { @class = "text-danger" ,@style="margin-left: 7px;margin-top:3px;"})
+
+                                                </div>
+                                            </div>
+                                        }
+                                     
+                                 
+
+                                    <div class="col-12 col-md-6 col-lg-12 col-xl-6">
+                                        <div class="sign__group">
+                                            <label class="sign__label" for="newpass">New password</label>
+                                            <input id="password" type="password" value="@Model.PasswordChange?.Password" name="password" class="sign__input">
+                                            @Html.ValidationMessage("Password", new { @class = "text-danger" ,@style="margin-left: 7px;margin-top:3px;"})
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-12 col-xl-6">
+                                        <div class="sign__group">
+                                            <label class="sign__label" for="confirmpass">Confirm new password</label>
+                                            <input id="ConfirmPassword" type="password" value="@Model.PasswordChange?.ConfirmPassword" name="ConfirmPassword" class="sign__input">
+                                            @Html.ValidationMessage("ConfirmPassword", new { @class = "text-danger" ,@style="margin-left: 7px;margin-top:3px;"})
+
+                                        </div>
+                                    </div>
+
+                                    @Html.ValidationMessage("CustomError", new { @class = "text-danger"})
+
+
+                                    @if (Model.PasswordChange != null)
+                                    {
+                                        @if (Model.PasswordChange.IsChanged)
+                                        {
+                                          <span class="text-success" style="margin-left: 7px;margin-top:3px;">Password has been updated successfully.</span>
+                   
+                                        }
+                                    }
+                                    <div class="col-12">
+                                        <button class="sign__btn" type="submit" value="submit">
+                                            <span>@PasswordHead</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- end password form -->
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- end content tabs -->
+        </div>
+    </div>
+</div>

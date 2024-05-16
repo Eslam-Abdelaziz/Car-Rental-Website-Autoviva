@@ -1,0 +1,56 @@
+﻿@model EmailConfirmationViewModel;
+@{
+    ViewData["Title"] = "Email Confirmation";
+}
+
+<div class="home">
+    <div class="home__bg"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="home__content">
+                    <div class="sign__content">
+                        <form asp-controller="Auth" class="sign__form" asp-action="EmailConfirmation">
+                            <div class="header__content" style="display: flex; justify-content: center;">
+                                <div class="header__logo">
+                                    <a asp-controller="Home" asp-action="index">
+                                        <img src="~/img/logo-black.svg" alt="">
+                                        <p style="text-align: center;"> Autoviva</p>
+                                    </a>
+                                </div>
+                            </div>
+                            @if(Model.IsResent)
+                            {
+                                <span class="text-success" style="margin-left: 7px;margin-top:3px;">Email has been resent to @Model.User.Email</span>
+                            }
+                            @if (Model.IsConfirmed)
+                            {
+                                <span class="text-success" style="margin-left: 7px;margin-top:3px;">Thank you for confirming your email.</span>
+                                <a class="sign__btn" asp-controller="Home" asp-action="Index">
+                                    Continue to Home..
+                                </a>
+
+                            }else
+                            {
+                                <div class="sign__group">
+                                    <input type="hidden" id="Uid" name="Uid" value="@Model.User.Id" />
+                                    <input type="text" value="@Model.User.Email" class="sign__input" style="color: gray;" disabled placeholder="Email Address">
+                                </div>
+                                <div class="sign__group">
+                                    <input type="text" name="code" class="sign__input" placeholder="Code">
+                                    <span class="text-danger" style="margin-left: 7px;margin-top:3px;" asp-validation-for="@Model.Code"></span>
+                                </div>
+                                @Html.ValidationMessage("CustomError", new { @class = "text-danger"})
+                                <span class="sign__text"><a asp-controller="Auth" asp-action="Resend" asp-route-uid="@Model.User.Id">Resend Code.</a></span>
+                                <button type="submit" value="submit" class="sign__btn"><span>Confirm Email.</span></button>
+                            }
+
+                          
+
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

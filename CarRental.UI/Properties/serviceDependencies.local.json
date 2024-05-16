@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "type": "secrets.user",
+      "dynamicId": null
+    },
+    "mssql1": {
+      "secretStore": "LocalSecretsFile",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/autovivadbdbserver/databases/autovivaDb",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:DefaultConnection",
+      "dynamicId": null
+    }
+  }
+}

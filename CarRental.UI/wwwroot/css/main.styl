@@ -1,0 +1,4996 @@
+/*----------------------------------------
+[Master Stylesheet]
+
+Project:	AutoViva HTML Template
+Version:	1.0
+Primary use:	AutoViva HTML Template
+----------------------------------------*/
+
+/*----------------------------------------
+[Table of contents]
+
+1. Fonts
+2. Common styles
+3. Header
+4. Main
+5. Breadcrumb
+6. Paginator
+7. Filter
+8. Home
+9. Car
+10. Details
+11. Thumbnails
+12. Offer
+13. Step
+14. Post
+15. Feature
+16. Accordion
+17. Team
+18. Testimonial
+19. Article
+20. Share
+21. Comments
+22. Contacts
+23. Partners
+24. Profile
+25. Cart
+26. Plan
+27. Footer
+28. Sign
+29. Page 404
+30. Modal
+32. Scrollbar-track
+----------------------------------------*/
+$white = #fff
+$black = #000
+
+$grey = #8a94a6
+$darkgrey = #33334f
+$lightgrey = #4e5d78
+
+$mainclr = #189cf4
+$mainclrdark = #111728
+
+$border-color = #ebecf0
+$bg = #edf1f7
+
+$bgg = linear-gradient(1turn, #f1f6fd 30%, #edf1f7)
+$bgs = 3px 3px 9px rgba(164,164,186,.2)
+$bgsh2 = 3px 3px 9px rgba(164,164,186,.3)
+
+$bgh = linear-gradient(90deg, #6cc4ff 6%, #189cf4)
+$bgsh = 3px 3px 9px rgba(55,170,247,.3)
+
+$red = #eb5757
+$green = #29B474
+$blue = #02B3E4
+$purple = #8051d4
+$orange = #f9ab00
+$pink = #d23787
+$yellow = #FFDC0F
+
+/*==============================
+	Fonts
+==============================*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@400;600&display=swap')
+
+/*==============================
+	Common styles
+==============================*/
+html
+	-webkit-text-size-adjust 100%
+	-ms-text-size-adjust 100%
+html
+body
+	height 100%
+body
+	font-family 'Open Sans', sans-serif
+	font-weight 400
+	background-color $bg
+	-webkit-font-smoothing antialiased
+button
+	padding 0
+	border none
+	background-color transparent
+	transition .5s ease
+	transition-property color, background-color, border-color, box-shadow
+	cursor pointer
+	&:focus
+		outline none
+a
+	text-decoration none
+	transition .5s ease
+	transition-property color, background-color, border-color, box-shadow
+	&:hover
+	&:active
+	&:focus
+		outline none
+		text-decoration none
+input
+textarea
+select
+	padding 0
+	margin 0
+	border-radius 0
+	-webkit-appearance none
+	-moz-appearance none
+	-ms-appearance none
+	appearance none
+	box-shadow none
+	transition .5s ease
+	transition-property color, border-color, box-shadow
+	&:focus
+		outline none
+
+select::-ms-expand
+	display none
+
+input::-webkit-outer-spin-button
+input::-webkit-inner-spin-button
+	-webkit-appearance none
+	margin 0
+
+input[type=number]
+	-moz-appearance textfield
+
+ul
+	margin 0
+	padding 0
+	list-style none
+
+::-moz-selection
+	background $white
+	color $darkgrey
+	text-shadow none
+::selection
+	background $white
+	color $darkgrey
+	text-shadow none
+
+::-webkit-input-placeholder
+	color $grey
+	opacity 1
+::-moz-placeholder
+	color $grey
+	opacity 1
+:-moz-placeholder
+	color $grey
+	opacity 1
+:-ms-input-placeholder
+	color $grey
+	opacity 1
+
+:focus
+	outline -webkit-focus-ring-color auto 0px
+
+:focus-visible
+	outline 0px dotted
+
+body::-webkit-scrollbar
+	width 16px
+
+body::-webkit-scrollbar-track
+	background $white
+
+body::-webkit-scrollbar-thumb
+	background-color rgba($grey, .3)
+	outline 0 solid $white
+
+@media (min-width: 1400px)
+	.container
+	.container-lg
+	.container-md
+	.container-sm
+	.container-xl
+	.container-xxl
+		max-width 1224px
+
+/*==============================
+	Header
+=============================*/
+.header
+	display block
+	position fixed
+	top 0
+	left 0
+	right 0
+	width auto
+	height 70px
+	background-color $bg
+	z-index 101
+	transition box-shadow .5s ease
+	&--active
+		box-shadow $bgs
+	&--page
+		background $bgg
+		box-shadow $bgs
+		border-bottom 1px solid $white
+	&__content
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		height 70px
+		width 100%
+		position relative
+	&__logo
+		display inline-flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		height 40px
+		img
+			width auto
+			height 40px
+			display block
+	&__actions
+		display inline-flex
+		flex-direction row
+		justify-content flex-end
+		align-items center
+		width auto
+		margin-left auto
+		margin-right 42px
+	&__action
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		height 100%
+		width auto
+		position relative
+		margin-left 20px
+		&:first-child
+			margin-left 0
+	&__action-btn
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		height 40px
+		width 40px
+		background-color $mainclr
+		border-radius 14px
+		span
+			display none
+			position relative
+			z-index 2
+		svg
+			width 22px
+			height auto
+			fill $white
+			transition fill .5s ease
+			position relative
+			z-index 2
+		&:before
+			content ''
+			position absolute
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			top 0
+			bottom 0
+			left 0
+			right 0
+			z-index 1
+			background $bgh
+			opacity 0
+			transition opacity .5s ease
+			pointer-events none
+			border-radius 14px
+		&:hover
+			box-shadow $bgsh
+			svg
+				fill $white
+			&:before
+				opacity 1
+	&__btn
+		position absolute
+		width 22px
+		height 22px
+		display block
+		right 0
+		top 24px
+		span
+			position absolute
+			display flex
+			flex-direction column
+			justify-content flex-start
+			align-items flex-start
+			right 0
+			width 22px
+			height 2px
+			background-color $lightgrey
+			border-radius 2px
+			transition .5s ease
+			transition-property width, background-color
+			&:first-child
+				top 0
+			&:nth-child(2)
+				top 10px
+				width 16px
+			&:last-child
+				top 20px
+				width 10px
+		&:hover
+			span
+				background-color $mainclr
+		&--active
+			span
+				background-color $mainclr
+				&:nth-child(2)
+					width 22px
+				&:last-child
+					width 22px
+	&__menu
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		position fixed
+		top 70px
+		right 0
+		bottom 0
+		background $bgg
+		box-shadow $bgs
+		border-left 1px solid $white
+		border-top 1px solid $white
+		z-index 99
+		width 240px
+		padding 25px 25px 0
+		transform translate3d(241px, 0, 0)
+		transition transform .5s ease
+		&--active
+			transform translate3d(0, 0, 0)
+	&__nav
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		position relative
+	&__nav-item
+		display inline-flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		margin-bottom 20px
+		position relative
+		&:last-child
+			margin-bottom 0
+	&__nav-link
+		font-size 14px
+		color $lightgrey
+		line-height 22px
+		height 22px
+		display inline-flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		font-weight 400
+		font-family: 'Nunito', sans-serif
+		svg
+			fill $lightgrey
+			width 14px
+			height auto
+			transition fill .5s ease
+			margin-left 1px
+			margin-top 2px
+		&--menu
+			svg
+				width 20px
+				margin-top 0
+				margin-left 0
+		&--active
+			color $mainclr
+			cursor default
+			font-weight 600
+			&:hover
+				color $mainclr !important
+		&:hover
+		&[aria-expanded="true"]
+			color $mainclr
+			svg
+				fill $mainclr
+	&__nav-menu
+		display flex !important
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		position absolute
+		z-index -1
+		pointer-events none
+		opacity 0
+		top 0
+		border-radius 20px
+		padding 0 16px
+		width 170px
+		transition .5s ease
+		transition-property margin-top, opacity
+		transform translate3d(0px, 24px, 0px)
+		margin-top -5px
+		background $bgg
+		box-shadow $bgs
+		border 1px solid $white
+		li
+			position relative
+			margin-bottom 15px
+			&:first-child
+				padding-top 16px
+			&:last-child
+				margin-bottom 0
+				padding-bottom 16px
+		a
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			color $lightgrey
+			font-size 14px
+			font-weight 400
+			transition color .5s ease
+			position relative
+			font-family 'Nunito', sans-serif
+			svg
+				fill $lightgrey
+				width 14px
+				height auto
+				transition .5s ease
+				margin-left 1px
+				margin-top 2px
+			&:hover
+			&[aria-expanded="true"]
+				color $mainclr
+				svg
+					fill $mainclr
+		&.show
+			z-index 1000
+			pointer-events auto
+			opacity 1
+	&__profile-btn
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 40px
+		position relative
+		height 40px
+		border-radius 14px
+		box-shadow $bgs
+		background-color $white
+		svg
+			fill $lightgrey
+			width 22px
+			height auto
+			transition fill .5s ease
+		&:hover
+		&[aria-expanded="true"]
+			box-shadow $bgsh2
+			svg
+				fill $mainclr
+	&__profile-menu
+		display flex !important
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		position absolute
+		z-index -1
+		pointer-events none
+		opacity 0
+		top 0
+		border-radius 20px
+		padding 16px
+		min-width 170px
+		transition .5s ease
+		transition-property margin-top, opacity
+		transform translate3d(0px, 42px, 0px)
+		height auto
+		background $bgg
+		box-shadow $bgs
+		border 1px solid $white
+		right 0 !important
+		left auto !important
+		margin-top -5px
+		li
+			margin-bottom 15px
+			width 100%
+			&:last-child
+				margin-bottom 0
+		a
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			color $lightgrey
+			font-size 14px
+			font-weight 400
+			transition color .5s ease
+			position relative
+			font-family 'Nunito', sans-serif
+			svg
+				fill $lightgrey
+				width 20px
+				height auto
+				transition fill .5s ease
+				margin-right 10px
+			&:hover
+				color $darkgrey
+				svg
+					fill $mainclr
+		&.show
+			z-index 1000
+			pointer-events auto
+			opacity 1
+	&__phone
+		display none
+	@media (min-width: 576px)
+		&__action-btn
+			width auto
+			padding 0 20px
+			span
+				display block
+				white-space nowrap
+				color $white
+				font-size 14px
+				font-family 'Nunito', sans-serif
+				font-weight 400
+				transition color .5s ease
+			svg
+				display none
+	@media (min-width: 768px)
+		&__action
+			margin-left 35px
+		&__actions
+			margin-right 52px
+		&__phone
+			display flex
+			flex-direction column
+			justify-content flex-start
+			align-items flex-start
+			a
+				font-family 'Nunito', sans-serif
+				font-weight 400
+				color $darkgrey
+				font-size 18px
+				line-height 100%
+				margin-bottom 5px
+				&:hover
+					color $blue
+			span
+				font-size 10px
+				color $lightgrey
+				line-height 100%
+	@media (min-width: 1200px)
+		&__logo
+			width auto
+			margin-right 50px
+		&__btn
+			display none
+		&__actions
+			margin-right 0
+			margin-left 50px
+		&__menu
+			flex-direction row
+			align-items center
+			width auto
+			padding 0
+			position relative
+			top auto
+			right auto
+			bottom auto
+			background transparent
+			transform translate3d(0, 0, 0)
+			border none
+			transition transform 0s ease
+			margin auto
+			box-shadow none
+		&__nav
+			flex-direction row
+			align-items center
+			width auto
+		&__nav-item
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			height 70px
+			margin-bottom 0
+			margin-left 35px
+			&:first-child
+				margin-left 0
+		&__nav-link
+			height 30px
+			line-height 30px
+		&__nav-menu
+			transform translate3d(0px, 52px, 0px)
+
+/*==============================
+	Main
+==============================*/
+.main
+	position relative
+	margin-top 70px
+	padding 0 0 60px
+	&--sign
+		margin-top 0
+		padding 0
+	&__title
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items flex-end
+		flex-wrap wrap
+		margin-bottom 5px
+		margin-top 60px
+		h1
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items flex-start
+			font-family 'Nunito', sans-serif
+			font-weight 400
+			color $darkgrey
+			font-size 32px
+			line-height 42px
+			margin-bottom 0
+			position relative
+			b
+				font-weight 600
+			a
+				color $darkgrey
+				&:hover
+					color $mainclr
+		h2
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items flex-start
+			font-family 'Nunito', sans-serif
+			font-weight 400
+			color $darkgrey
+			font-size 30px
+			line-height 40px
+			margin-bottom 0
+			position relative
+			b
+				font-weight 600
+			a
+				color $darkgrey
+				&:hover
+					color $mainclr
+		p
+			display block
+			width 100%
+			font-size 16px
+			line-height 26px
+			color $lightgrey
+			margin-top 20px
+			margin-bottom 0
+			b
+				font-weight 600
+			a
+				color $mainclr
+				text-decoration underline
+				&:hover
+					text-decoration none
+		ol
+			padding-left 0
+			list-style none
+			counter-reset li
+			margin-bottom 0
+			ol
+				padding-left 15px
+				margin-top 10px
+				ol
+					margin-top 10px
+					margin-bottom 10px
+					li
+						margin-top 5px
+			h4
+				font-size 16px
+				color $darkgrey
+				display inline-block
+				margin-bottom 0
+				margin-top 20px
+				font-weight 600
+				font-family 'Nunito', sans-serif
+			li
+				font-size 16px
+				line-height 26px
+				color $lightgrey
+				position relative
+				b
+					font-weight 600
+					color $lightgrey
+				a
+					color $mainclr
+					&:hover
+						color $mainclr
+						text-decoration underline
+				&:last-child
+					margin-bottom 0
+				&:before
+					counter-increment li
+					content counters(li,".") ". "
+		&--page
+			margin-top 50px
+			margin-bottom 0
+		&--first
+			margin-top 0
+	&__link
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		font-size 14px
+		color $lightgrey
+		font-weight 400
+		margin-bottom 5px
+		svg
+			width 18px
+			height auto
+			fill $lightgrey
+			margin-left 5px
+			transition fill .5s ease
+			margin-right -3px
+			margin-top 2px
+		&:hover
+			color $darkgrey
+			svg
+				fill $mainclr
+	&__filter
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		width 100%
+		margin-top 20px
+		padding 0 20px
+		height 60px
+		background $bgg
+		box-shadow $bgs
+		border 1px solid $white
+		position relative
+		border-radius 20px
+	&__filter-wrap
+		display none
+	&__filter-search
+		display none
+	&__filter-menu
+		display inline-flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		height 30px
+		font-size 14px
+		color $darkgrey
+		svg
+			width 20px
+			height 20px
+			fill $mainclr
+			margin-right 6px
+	&__filter-amount
+		font-size 14px
+		color $lightgrey
+		font-weight 400
+		font-family 'Nunito', sans-serif
+	&__select
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		width auto
+		margin-right 30px
+		padding 0
+		border-radius 0
+		border none
+		background transparent
+		&:focus
+			box-shadow none
+		.ss-single
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			height 40px
+			padding 0
+			margin 0 !important
+			font-size 14px
+			font-family 'Nunito', sans-serif
+			font-weight 400
+			color $lightgrey
+		.ss-arrow
+			width 8px
+			height 8px
+			margin 3px 0 0 5px
+			path
+				stroke $lightgrey
+		.ss-search
+			padding 0
+			margin-bottom 12px
+			font-size 12px
+			color $darkgrey
+			width 100%
+			&:last-child
+				margin-bottom 0
+			input
+				padding 0
+				background-color transparent
+				font-family 'Nunito', sans-serif
+				color $darkgrey
+				font-size 14px
+				border-radius 0
+				border none
+				border-bottom 1px solid rgba($grey, .2)
+				height 40px
+				&:focus
+					box-shadow none
+				&::placeholder
+					color $grey
+		.ss-list
+			width 100%
+			.ss-option
+				font-size 14px
+				font-family 'Nunito', sans-serif
+				font-weight 400
+				color $lightgrey
+				line-height 36px
+				padding 0
+				transition .5s ease
+				&:hover
+					background-color transparent
+					color $mainclr
+				&.ss-selected
+					background-color transparent !important
+					color $mainclr !important
+		&.ss-content
+			flex-direction column
+			align-items flex-start
+			border-radius 20px
+			min-width 170px
+			padding 12px 20px
+			border 1px solid $white
+			background $bgg
+			box-shadow $bgs
+	&__load
+		width 160px
+		height 50px
+		border-radius 16px
+		background-color $mainclr
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		color $white
+		font-size 14px
+		position relative
+		z-index 2
+		text-transform uppercase
+		font-family 'Nunito', sans-serif
+		font-weight 600
+		margin 30px auto 0
+		transition .5s ease
+		transition-property color, background-color, border-color, box-shadow, transform, margin-top, height
+		span
+			position relative
+			z-index 2
+		&:before
+			content ''
+			position absolute
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			top 0
+			bottom 0
+			left 0
+			right 0
+			z-index 1
+			background $bgh
+			opacity 0
+			transition opacity .5s ease
+			pointer-events none
+			border-radius 16px
+		&:hover
+			box-shadow $bgsh
+			color $white
+			&:before
+				opacity 1
+		&[aria-expanded="true"]
+			margin-top 0
+			transform scale(0)
+			height 1px
+	&__tabs
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items flex-start
+		flex-wrap wrap
+		width 100%
+		border-bottom 2px solid rgba($grey, .2)
+		&--page
+			margin-top 6px
+		li
+			margin-top 10px
+			margin-right 20px
+			&:last-child
+				margin-right 0
+		button
+			display inline-flex
+			flex-direction row
+			justify-content flex-start
+			align-items flex-start
+			width auto
+			color $lightgrey
+			font-size 16px
+			font-family 'Nunito', sans-serif
+			padding 0 0 10px
+			position relative
+			&:before
+				content ''
+				position absolute
+				display block
+				left 0
+				right 0
+				bottom 0
+				height 0
+				background-color $mainclr
+				border-radius 3px 3px 0 0
+				transition height .5s ease
+			&:hover
+				color $darkgrey
+			&.active
+				color $darkgrey
+				&:before
+					height 3px
+	&__nav
+		display none
+	&__carousel
+		display block
+		position relative
+		width 100%
+		overflow hidden
+		padding-left 15px
+		.splide__pagination
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			width 100%
+			margin-top 15px
+			position relative
+			padding 0 15px 0 0
+			bottom 0
+			li
+				margin-right 10px
+				&:last-child
+					margin-right 0
+		.splide__pagination__page
+			display block
+			height 4px
+			width 10px
+			border-radius 4px
+			background-color rgba($grey, .23)
+			transition .5s ease
+			opacity 1
+			margin 0
+			&.is-active
+				transform scale(1)
+				width 20px
+				background-color $mainclr
+	@media (min-width: 576px)
+		&__tabs
+			li
+				margin-right 30px
+				&:last-child
+					margin-right 0
+		&__carousel
+			padding-left calc((100% - 510px)/2)
+			.splide__pagination
+				padding-right 0
+				width 510px
+	@media (min-width: 768px)
+		padding 0 0 70px
+		&--sign
+			padding 0
+		&__title
+			margin-top 70px
+			h1
+				font-size 36px
+				line-height 46px
+			h2
+				font-size 32px
+				line-height 42px
+			p
+				&:last-child
+					margin-bottom 10px
+			&--sidebar
+				margin-bottom 10px
+			&--page
+				margin-top 50px
+				margin-bottom -5px
+			&--first
+				margin-top 30px
+		&__filter
+			padding 0 20px
+			justify-content flex-start
+			margin-top 30px
+			height 70px
+		&__filter-wrap
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			width 100%
+			position relative
+			z-index 2
+		&__filter-search
+			position relative
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			width 285px
+			margin-right 30px
+			&:hover
+				input
+					border-color $mainclr
+			input
+				width 285px
+				height 40px
+				background-color $white
+				color $darkgrey
+				font-size 14px
+				border-radius 16px
+				border 1px solid rgba($grey, .2)
+				padding 0 60px 0 20px
+				font-family 'Nunito', sans-serif
+				&:focus
+					border-color $mainclr
+			button
+				position absolute
+				right 20px
+				top 0
+				height 40px
+				width auto
+				display flex
+				flex-direction row
+				justify-content center
+				align-items center
+				svg
+					width 20px
+					height auto
+					fill $lightgrey
+					transition fill .5s ease
+				&:hover
+					svg
+						fill $mainclr
+		&__filter-amount
+		&__filter-menu
+			display none
+		&__load
+			margin 40px auto 0
+		&__tabs
+			&--page
+				margin-top 6px
+				margin-bottom 5px
+			li
+				margin-top 20px
+				margin-right 30px
+				&:last-child
+					margin-right 0
+		&__carousel
+			padding-left calc((100% - 690px)/2)
+			.splide__pagination
+				margin-top 20px
+				width 690px
+	@media (min-width: 992px)
+		&__title
+			&--sidebar
+				margin-top 30px
+		&__carousel
+			padding-left calc((100% - 930px)/2)
+			.splide__pagination
+				width 930px
+	@media (min-width: 1200px)
+		&__filter-search
+			width 305px
+			input
+				width 305px
+		&__carousel
+			padding-left 0
+			overflow visible
+			&:before
+			&:after
+				content ''
+				position absolute
+				display block
+				top 0
+				bottom 0
+				width calc((100% - 1170px)/2)
+				z-index 1
+			&:before
+				left 0
+				background linear-gradient(to right, rgba($bg, .85) 0%, rgba($bg, 0) 100%)
+			&:after
+				right 0
+				background linear-gradient(to right, rgba($bg, 0) 0%, rgba($bg, .85) 100%)
+	@media (min-width: 1400px)
+		&__filter-search
+			width 335px
+			input
+				width 335px
+		&__carousel
+			&:before
+			&:after
+				width calc((100% - 1230px)/2)
+
+/*==============================
+	Splide
+==============================*/
+.splide
+	&--content
+		.splide__arrows
+			position relative
+		.splide__arrow
+			display none
+	&--card
+		.splide__arrow
+			position absolute
+			display none
+			flex-direction row
+			justify-content center
+			align-items center
+			width 32px
+			height 32px
+			top 50%
+			margin-top -16px
+			z-index 2
+			box-shadow $bgs
+			background $white
+			border-radius 10px
+			opacity 0
+			transform scale(.92)
+			transition .5s ease
+			transition-property opacity, transform
+			svg
+				width 22px
+				height auto
+				fill $lightgrey
+				transition fill .5s ease
+			&:hover
+				box-shadow $bgsh2
+				svg
+					fill $mainclr
+			&--prev
+				left 10px
+				svg
+					transform none
+			&--next
+				right 10px
+	&--details
+		width 100%
+		.splide__slide
+			img
+				width 100%
+		.splide__arrow
+			position absolute
+			display none
+			flex-direction row
+			justify-content center
+			align-items center
+			width 36px
+			height 36px
+			top 50%
+			z-index 2
+			box-shadow $bgs
+			background $white
+			border-radius 12px
+			opacity 1
+			transition .5s ease
+			transition-property opacity, transform
+			svg
+				width 22px
+				height auto
+				fill $lightgrey
+				transition fill .5s ease
+			&:hover
+				box-shadow $bgsh2
+				svg
+					fill $mainclr
+			&--prev
+				left 15px
+				svg
+					transform none
+			&--next
+				right 15px
+	@media (min-width: 1200px)
+		&--content
+			.splide__arrows
+				width 1116px
+				margin 0 auto
+			.splide__arrow
+				position absolute
+				display flex
+				flex-direction row
+				justify-content center
+				align-items center
+				width 36px
+				height 36px
+				right 0
+				top -44px
+				z-index 2
+				box-shadow $bgs
+				background $white
+				border-radius 12px
+				opacity 1
+				transform none
+				svg
+					width 22px
+					height auto
+					fill $lightgrey
+					transition fill .5s ease
+				&:hover
+					box-shadow $bgsh2
+					svg
+						fill $mainclr
+				&--prev
+					right 51px
+					left auto
+					svg
+						transform none
+				&--next
+					right 0
+		&--card
+		&--details
+			.splide__arrow
+				display flex
+	@media (min-width: 1400px)
+		&--content
+			.splide__arrows
+				width 1200px
+
+/*==============================
+	Breadcrumb
+==============================*/
+.breadcrumbs
+	display flex
+	flex-direction row
+	justify-content flex-start
+	align-items center
+	flex-wrap wrap
+	width 100%
+	margin-top 25px
+	&__item
+		font-size 14px
+		line-height 22px
+		color $lightgrey
+		transition color .5s ease
+		position relative
+		margin-right 32px
+		font-family 'Nunito', sans-serif
+		&:before
+			content ''
+			position absolute
+			left 100%
+			top 2px
+			bottom 0
+			width 32px
+			background url('../img/breadcrumb.svg') no-repeat center / 16px auto
+		&:hover
+			color $lightgrey
+		&:last-child
+			margin-right 0
+			&:before
+				display none
+		&--active
+			cursor default
+			margin-right 0
+			&:before
+				display none
+			&:hover
+				color $lightgrey
+	a
+		color $lightgrey
+		&:hover
+			color $mainclr
+	@media (min-width: 768px)
+		margin-top 30px
+
+/*==============================
+	Paginator
+==============================*/
+.paginator
+	display flex
+	flex-direction row
+	justify-content space-between
+	align-items center
+	margin 30px auto 0
+	padding 0 20px
+	width 100%
+	height 60px
+	border-radius 20px
+	background $bgg
+	box-shadow $bgs
+	border 1px solid $white
+	&__pages
+		font-size 14px
+		color $lightgrey
+		font-weight 400
+		font-family 'Nunito', sans-serif
+	&__list
+		display none
+	&__list-mobile
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		li
+			margin-right 15px
+			&:first-child
+				a
+					padding 0 12px 0 6px
+					svg
+						margin-right 2px
+			&:last-child
+				margin-right 0
+				a
+					padding 0 6px 0 12px
+					svg
+						margin-left 2px
+		a
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			height 30px
+			width 70px
+			border-radius 10px
+			background-color $white
+			box-shadow $bgs
+			span
+				font-size 14px
+				color $lightgrey
+				font-weight 400
+				font-family 'Nunito', sans-serif
+				transition color .5s ease
+			svg
+				width 20px
+				height auto
+				fill $lightgrey
+				transition fill .5s ease
+			&:hover
+				box-shadow $bgsh2
+				span
+					color $mainclr
+				svg
+					fill $mainclr
+	@media (min-width: 768px)
+		margin 40px auto 0
+		&__list-mobile
+			display none
+		&__list
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			li
+				margin-right 15px
+				&:last-child
+					margin-right 0
+				&.active
+					a
+						cursor default
+						font-weight 600
+						box-shadow $bgsh2
+						&:hover
+							color $lightgrey
+			span
+				display flex
+				flex-direction row
+				justify-content center
+				align-items center
+				width 30px
+				height 30px
+				border-radius 10px
+				background-color $white
+				font-size 14px
+				color $lightgrey
+				font-weight 400
+				font-family 'Nunito', sans-serif
+				box-shadow $bgs
+				cursor default
+			a
+				display flex
+				flex-direction row
+				justify-content center
+				align-items center
+				min-width 30px
+				height 30px
+				border-radius 10px
+				background-color $white
+				font-size 14px
+				color $lightgrey
+				font-weight 400
+				font-family 'Nunito', sans-serif
+				box-shadow $bgs
+				padding 0 5px
+				svg
+					width 20px
+					height auto
+					fill $lightgrey
+					transition fill .5s ease
+				&:hover
+					color $mainclr
+					box-shadow $bgsh2
+					svg
+						fill $mainclr
+
+/*==============================
+	Filter
+==============================*/
+.filter-wrap
+	margin-top 20px
+	height 100%
+	&__btn
+		width 100%
+		height 46px
+		border-radius 16px
+		background-color $mainclr
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		color $white
+		font-size 14px
+		position relative
+		z-index 2
+		text-transform uppercase
+		font-family 'Nunito', sans-serif
+		font-weight 600
+		span
+			position relative
+			z-index 2
+		&:before
+			content ''
+			position absolute
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			top 0
+			bottom 0
+			left 0
+			right 0
+			z-index 1
+			background $bgh
+			opacity 0
+			transition opacity .5s ease
+			pointer-events none
+			border-radius 16px
+		&:hover
+			box-shadow $bgsh
+			color $white
+			&:before
+				opacity 1
+	@media (min-width: 768px)
+		margin-top 30px
+	@media (min-width: 1200px)
+		margin-top 0
+		&__btn
+			display none
+		&__content
+			display block !important
+			position relative
+			height 100%
+
+.filter
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	margin-top 20px
+	background-color $lightgrey
+	padding 20px
+	border-radius 20px
+	background $bgg
+	box-shadow $bgs
+	border 1px solid $white
+	&__title
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		height auto
+		width 100%
+		color $darkgrey
+		font-size 16px
+		font-weight 400
+		margin-bottom 25px
+		button
+			font-size 12px
+			font-weight 400
+			color $mainclr
+			transition color .5s ease
+			&:hover
+				color $red
+	&__group
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		margin-bottom 20px
+		position relative
+		&:last-child
+			margin-bottom 0
+	&__label
+		line-height 100%
+		font-weight 400
+		font-size 14px
+		color $lightgrey
+		margin-bottom 15px
+		font-family 'Nunito', sans-serif
+		b
+			font-weight 600
+			color $lightgrey
+	&__select-wrap
+		position relative
+		width 100%
+	&__select
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		width 100%
+		padding 0
+		border-radius 16px
+		border 1px solid rgba($grey, .2)
+		background $white
+		padding 0 20px
+		&:focus
+			box-shadow none
+		.ss-single
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			height 46px
+			padding 0
+			margin 0 !important
+			font-size 14px
+			font-family 'Nunito', sans-serif
+			font-weight 400
+			color $darkgrey
+		.ss-arrow
+			width 8px
+			height 8px
+			margin 3px 0 0 5px
+			path
+				stroke $lightgrey
+		.ss-search
+			padding 0
+			margin-bottom 12px
+			font-size 12px
+			color $darkgrey
+			width 100%
+			&:last-child
+				margin-bottom 0
+			input
+				padding 0
+				background-color transparent
+				font-family 'Nunito', sans-serif
+				color $darkgrey
+				font-size 14px
+				border-radius 0
+				border none
+				border-bottom 1px solid rgba($grey, .2)
+				height 40px
+				&:focus
+					box-shadow none
+				&::placeholder
+					color $grey
+		.ss-list
+			width 100%
+			.ss-option
+				font-size 14px
+				font-family 'Nunito', sans-serif
+				font-weight 400
+				color $lightgrey
+				line-height 36px
+				padding 0
+				transition .5s ease
+				&:hover
+					background-color transparent
+					color $mainclr
+				&.ss-selected
+					background-color transparent !important
+					color $mainclr !important
+		&.ss-content
+			flex-direction column
+			align-items flex-start
+			border-radius 20px
+			min-width 170px
+			padding 12px 20px
+			box-shadow $bgs
+			background $white
+			border-bottom 1px solid rgba($grey, .2)
+		&.ss-open-below
+			border-bottom-left-radius 16px
+			border-bottom-right-radius 16px
+		&.ss-open-above
+			border-top-left-radius 16px
+			border-top-right-radius 16px
+	&__input
+		background-color $white
+		border 1px solid rgba($grey, .2)
+		border-radius 16px
+		height 46px
+		position relative
+		color $darkgrey
+		font-size 14px
+		width 100%
+		padding 0 20px
+		font-family 'Nunito', sans-serif
+		&:focus
+		&:hover
+			border-color $mainclr
+	&__checkboxes
+		position relative
+		width 100%
+		&:first-child
+			margin-top 0
+		li
+			position relative
+			margin-bottom 12px
+			&:last-child
+				margin-bottom 0
+		input
+			&:not(:checked)
+			&:checked
+				position absolute
+				left -9999px
+			&:not(:checked) + label
+			&:checked + label
+				font-size 14px
+				font-weight 400
+				position relative
+				cursor pointer
+				padding-left 32px
+				line-height 20px
+				font-family 'Nunito', sans-serif
+				margin 0
+				transition color .5s ease
+				a
+					color $mainclr
+					&:hover
+						color $mainclr
+						text-decoration underline
+			&:not(:checked) + label
+				color $lightgrey
+			&:checked + label
+				color $darkgrey
+			&:not(:checked) + label:before
+			&:checked + label:before
+				content ''
+				position absolute
+				display block
+				left 0
+				top 0
+				width 20px
+				height 20px
+				background-color $white
+				border-radius 8px
+				border 1px solid rgba($grey, .22)
+			&:not(:checked) + label:after
+			&:checked + label:after
+				content ''
+				position absolute
+				display block
+				left 5px
+				top 5px
+				width 10px
+				height 10px
+				transition .5s ease
+				background-color $mainclr
+				border-radius 4px
+			&:not(:checked) + label:after
+				opacity 0
+				transform scale(0)
+			&:checked + label:after
+				opacity 1
+				transform scale(1)
+		label
+			&::-moz-selection
+				background transparent
+				color $lightgrey
+			&::selection
+				background transparent
+				color $lightgrey
+	&__btn
+		width 100%
+		height 46px
+		border-radius 16px
+		background-color $mainclr
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		color $white
+		font-size 14px
+		position relative
+		z-index 2
+		text-transform uppercase
+		font-family 'Nunito', sans-serif
+		font-weight 600
+		span
+			position relative
+			z-index 2
+		&:before
+			content ''
+			position absolute
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			top 0
+			bottom 0
+			left 0
+			right 0
+			z-index 1
+			background $bgh
+			opacity 0
+			transition opacity .5s ease
+			pointer-events none
+			border-radius 16px
+		&:hover
+			box-shadow $bgsh
+			color $white
+			&:before
+				opacity 1
+	@media (min-width: 768px)
+		margin-top 24px
+	@media (min-width: 1200px)
+		margin-left 10px
+		&--left
+			margin-left 0
+			margin-right 10px
+		&--sticky
+			position -webkit-sticky
+			position sticky
+			top 100px
+			margin-bottom 24px
+
+.mfilter
+	position fixed
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	top 70px
+	bottom 0
+	left 0
+	padding 25px 15px
+	z-index 100
+	background $bgg
+	box-shadow $bgs
+	border-right 1px solid $white
+	border-top 1px solid $white
+	width 260px
+	transition transform .5s ease
+	transform translate3d(-260px, 0, 0)
+	&--active
+		transform translate3d(0, 0, 0)
+	&__head
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		width 100%
+		margin-bottom 25px
+	&__title
+		color $darkgrey
+		font-size 18px
+		line-height 100%
+		font-weight 400
+		margin-bottom 0
+	&__close
+		svg
+			fill $grey
+			height auto
+			width 24px
+			transition .5s ease
+			opacity .6
+		&:hover
+			svg
+				fill $mainclr
+				opacity 1
+	&__search
+		position relative
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		width 100%
+		&:hover
+			input
+				border-color $mainclr
+		input
+			width 100%
+			height 46px
+			background-color $white
+			color $darkgrey
+			font-size 14px
+			border-radius 16px
+			border 1px solid rgba($grey, .2)
+			padding 0 60px 0 20px
+			font-family 'Nunito', sans-serif
+			&:focus
+				border-color $mainclr
+		button
+			position absolute
+			right 20px
+			top 0
+			height 46px
+			width auto
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			svg
+				width 20px
+				height auto
+				fill $lightgrey
+				transition fill .5s ease
+			&:hover
+				svg
+					fill $mainclr
+	&__select-wrap
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		border-top 1px solid rgba($grey, .22)
+		margin-top 25px
+		padding-top 25px
+	&__apply
+		width 100%
+		height 46px
+		border-radius 16px
+		background-color $mainclr
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		color $white
+		font-size 14px
+		position relative
+		z-index 2
+		text-transform uppercase
+		font-family 'Nunito', sans-serif
+		font-weight 600
+		margin-top auto
+		span
+			position relative
+			z-index 2
+		&:before
+			content ''
+			position absolute
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			top 0
+			bottom 0
+			left 0
+			right 0
+			z-index 1
+			background $bgh
+			opacity 0
+			transition opacity .5s ease
+			pointer-events none
+			border-radius 16px
+		&:hover
+			box-shadow $bgsh
+			color $white
+			&:before
+				opacity 1
+	@media (min-width: 576px)
+		padding-left calc((100vw - 516px)/2)
+		padding-right 30px
+	@media (min-width: 768px)
+		display none
+
+/*==============================
+	Home
+==============================*/
+.home
+	position relative
+	overflow hidden
+	&__content
+		display flex
+		flex-direction column
+		justify-content center
+		align-items flex-start
+		min-height 560px
+		width 100%
+		padding 60px 0
+		position relative
+		z-index 3
+	&__title
+		position relative
+		z-index 2
+		color $darkgrey
+		font-weight 600
+		font-size 34px
+		font-family 'Nunito', sans-serif
+		margin-bottom 0
+		line-height 48px
+		text-transform uppercase
+		b
+			font-weight 600
+		span
+			color $mainclr
+	&__text
+		position relative
+		z-index 2
+		color $lightgrey
+		font-size 16px
+		line-height 28px
+		margin-bottom 0
+		margin-top 15px
+	&__btns
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items flex-start
+		flex-wrap wrap
+		width 100%
+		margin-top 10px
+	&__search
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items center
+		width 100%
+		margin-top 30px
+		position relative
+		z-index 2
+		border-radius 20px
+		overflow hidden
+		background $bgg
+		border 1px solid $white
+		box-shadow $bgs
+		button
+			width calc(100% - 40px)
+			height 50px
+			border-radius 16px
+			background-color $mainclr
+			display inline-flex
+			flex-direction row
+			justify-content center
+			align-items center
+			position relative
+			color $white
+			font-size 14px
+			text-transform uppercase
+			font-family 'Nunito', sans-serif
+			font-weight 600
+			padding 0 20px
+			margin-bottom 20px
+			margin-top 10px
+			transition .5s ease
+			transition-property color, background-color, border-color, box-shadow, transform, margin-top, height
+			span
+				position relative
+				z-index 2
+			&:before
+				content ''
+				position absolute
+				display flex
+				flex-direction row
+				justify-content center
+				align-items center
+				top 0
+				bottom 0
+				left 0
+				right 0
+				z-index 1
+				background $bgh
+				opacity 0
+				transition opacity .5s ease
+				pointer-events none
+				border-radius 16px
+			&:hover
+				box-shadow $bgsh
+				color $white
+				&:before
+					opacity 1
+	&__group
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		padding 15px 20px 10px
+		border-top 1px solid rgba($grey, .2)
+		width 100%
+		position relative
+		&:first-child
+			border-top none
+		label
+			font-size 14px
+			line-height 20px
+			font-weight 400
+			font-family 'Nunito', sans-serif
+			margin-bottom 5px
+			color $grey
+			white-space nowrap
+			overflow hidden
+			word-wrap break-word
+			text-overflow ellipsis
+			width 100%
+		input
+			width 100%
+			height 34px
+			border-radius 0
+			border none
+			border-right none
+			font-size 16px
+			color $darkgrey
+			font-family 'Nunito', sans-serif
+			font-weight 400
+			background-color transparent
+			&::placeholder
+				color $lightgrey
+			&::-webkit-input-placeholder
+				color $lightgrey
+			&::-moz-placeholder
+				color $lightgrey
+			&:-moz-placeholder
+				color $lightgrey
+			&:-ms-input-placeholder
+				color $lightgrey
+			&::-moz-selection
+				background $mainclr
+				color $white
+				text-shadow none
+			&::selection
+				background $mainclr
+				color $white
+				text-shadow none
+	&__bg
+		display none
+	@media (min-width: 768px)
+		&:before
+			content ''
+			position absolute
+			z-index 1
+			border-radius 24px
+			background-image $bgh
+			pointer-events none
+			overflow hidden
+			left 66%
+			right -40px
+			top 25px
+			bottom 40px
+		&__content
+			padding 70px 0
+		&__title
+			font-size 42px
+			line-height 58px
+		&__search
+			flex-direction row
+			margin-top 40px
+			button
+				width 130px
+				margin-right 20px
+				margin-bottom 0
+				margin-top 0
+		&__group
+			padding 15px 20px 10px
+			width calc(33.333333% - 50px)
+			border-top none
+			border-left 1px solid rgba($grey, .2)
+			&:first-child
+				border-left none
+		&__bg
+			display block
+			position absolute
+			z-index 2
+			border-radius 24px
+			overflow hidden
+			right -40px
+			left 66%
+			top 25px
+			bottom 40px
+			background url('../img/home/home.png') no-repeat center / cover
+			pointer-events none
+	@media (min-width: 992px)
+		&__search
+			max-width 930px
+	@media (min-width: 1200px)
+		&:before
+			right 40px
+			left 50%
+		&__content
+			height calc(100vh - 70px)
+		&__title
+			font-size 46px
+			line-height 60px
+		&__search
+			max-width 940px
+			button
+				width 160px
+		&__bg
+			right 40px
+			left 50%
+	@media (min-width: 1900px)
+		&:before
+			right 240px
+		&__bg
+			right 240px
+
+/*==============================
+	Car
+==============================*/
+.car
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	width 100%
+	border-radius 20px
+	position relative
+	margin-top 20px
+	padding 10px
+	background $bgg
+	box-shadow $bgs
+	border 1px solid $white
+	&:hover
+		.splide__arrow
+			opacity 1
+			transform scale(1)
+	&__slider
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		width 100%
+		background-color transparent
+		border-radius 16px
+		margin-bottom 20px
+		overflow hidden
+		position relative
+		img
+			width 100%
+			border-radius 16px
+		.splide__pagination
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			width 100%
+			position absolute
+			padding 0 15px
+			bottom 15px
+			li
+				margin-right 10px
+				&:last-child
+					margin-right 0
+		.splide__pagination__page
+			display block
+			height 4px
+			width 10px
+			border-radius 4px
+			background-color rgba($white, .44)
+			transition .5s ease
+			opacity 1
+			margin 0
+			&.is-active
+				transform scale(1)
+				width 16px
+				background-color $white
+	&__img
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		width 100%
+		background-color $white
+		border-radius 16px
+		margin-bottom 20px
+		overflow hidden
+		img
+			width 100%
+	&__title
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		position relative
+		width 100%
+		padding 0 10px
+	&__name
+		font-size 22px
+		line-height 30px
+		color $darkgrey
+		margin-bottom 0
+		font-family 'Nunito', sans-serif
+		font-weight 400
+		padding-right 70px
+		width 100%
+		overflow hidden
+		white-space nowrap
+		-o-text-overflow ellipsis
+		text-overflow ellipsis
+		word-wrap break-word
+		a
+			color $darkgrey
+			&:hover
+				color $mainclr
+	&__year
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		height 30px
+		padding 0 12px
+		border-radius 12px
+		color $darkgrey
+		font-family 'Nunito', sans-serif
+		font-size 14px
+		font-weight 600
+		border 2px dashed rgba($mainclr, .44)
+		position absolute
+		right 10px
+	&__list
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		flex-wrap wrap
+		width 100%
+		padding 0 10px 10px
+		margin-top 5px
+		li
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			width 50%
+			margin-top 15px
+		svg
+			width 20px
+			height auto
+			fill $mainclr
+			margin-right 6px
+		span
+			font-size 14px
+			line-height 20px
+			color $lightgrey
+			font-family 'Nunito', sans-serif
+	&__footer
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		width 100%
+		padding 20px 10px 10px
+		margin-top 10px
+		position relative
+		&:before
+			content ''
+			position absolute
+			top 0
+			left 10px
+			right 10px
+			height 1px
+			background-color rgba($grey, .22)
+	&__favorite
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		height 36px
+		width 36px
+		border-radius 12px
+		background-color rgba($mainclr, .12)
+		margin-left auto
+		margin-right 15px
+		svg
+			width 20px
+			height auto
+			fill rgba($mainclr, .66)
+			transition .5s ease
+		&:hover
+			background-color rgba($red, .12)
+			svg
+				fill $red
+		&--active
+			background-color rgba($red, .12)
+			svg
+				fill $red
+			&:hover
+				background-color rgba($red, .12)
+				svg
+					fill $red
+	&__price
+		font-size 24px
+		line-height 100%
+		font-family 'Nunito', sans-serif
+		font-weight 400
+		color $darkgrey
+		sub
+			font-size 14px
+			bottom 0
+			font-weight 400
+	&__more
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		position relative
+		font-family 'Nunito', sans-serif
+		font-size 14px
+		color $white
+		font-weight 600
+		background-color $mainclr
+		height 36px
+		padding 0 16px
+		border-radius 12px
+		transition .5s ease
+		transition-property color, background-color, border-color, box-shadow, transform, margin-top, height
+		span
+			position relative
+			z-index 2
+		&:before
+			content ''
+			position absolute
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			top 0
+			bottom 0
+			left 0
+			right 0
+			z-index 1
+			background $bgh
+			opacity 0
+			transition opacity .5s ease
+			pointer-events none
+			border-radius 12px
+		&:hover
+			box-shadow $bgsh
+			color $white
+			&:before
+				opacity 1
+	@media (min-width: 768px)
+		margin-top 24px
+
+/*==============================
+	Details
+==============================*/
+.details
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	width 100%
+	border-radius 20px
+	position relative
+	margin-top 20px
+	padding 20px
+	background $bgg
+	box-shadow $bgs
+	border 1px solid $white
+	&__slider
+		width 100%
+		background-color transparent
+		border-radius 18px
+		overflow hidden
+		position relative
+		img
+			width 100%
+			border-radius 18px
+	@media (min-width: 768px)
+		margin-top 30px
+
+/*==============================
+	Thumbnails
+==============================*/
+.thumbnails
+	display flex
+	flex-direction row
+	justify-content flex-start
+	align-items flex-start
+	width 100%
+	position relative
+	margin-top 15px
+	overflow hidden
+	.thumbnail
+		width calc(25% - 10px)
+		height auto
+		margin-right 14px
+		border-radius 14px
+		overflow hidden
+		cursor pointer
+		img
+			width 100%
+			border-radius 14px
+			-webkit-filter grayscale(1)
+			filter grayscale(1)
+			opacity .65
+			transition .5s ease
+		&:last-child
+			margin-right 0
+		&.is-active
+			cursor default
+			img
+				-webkit-filter grayscale(0)
+				filter grayscale(0)
+				opacity 1
+	@media (min-width: 768px)
+		.thumbnail
+			border-radius 16px
+			img
+				border-radius 16px
+
+/*==============================
+	Offer
+==============================*/
+.offer
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	width 100%
+	border-radius 20px
+	position relative
+	margin-top 20px
+	padding 20px
+	background $bgg
+	box-shadow $bgs
+	border 1px solid $white
+	&__title
+		display block
+		width 100%
+		font-size 14px
+		line-height 100%
+		text-transform uppercase
+		color $lightgrey
+		font-family 'Nunito', sans-serif
+		font-weight 600
+		margin-bottom 20px
+	&__wrap
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		width 100%
+		position relative
+		margin-bottom 25px
+		margin-top -10px
+		&:last-child
+			margin-bottom 0
+	&__price
+		font-size 26px
+		line-height 100%
+		font-family 'Nunito', sans-serif
+		font-weight 400
+		color $darkgrey
+		sub
+			font-size 14px
+			bottom 0
+			font-weight 400
+	&__favorite
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		height 40px
+		width 40px
+		border-radius 12px
+		background-color rgba($mainclr, .12)
+		margin-left auto
+		margin-right 15px
+		svg
+			width 20px
+			height auto
+			fill rgba($mainclr, .66)
+			transition .5s ease
+		&:hover
+			background-color rgba($red, .12)
+			svg
+				fill $red
+		&--active
+			background-color rgba($red, .12)
+			svg
+				fill $red
+			&:hover
+				background-color rgba($red, .12)
+				svg
+					fill $red
+	&__rent
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		position relative
+		font-family 'Nunito', sans-serif
+		font-size 14px
+		color $white
+		font-weight 600
+		background-color $mainclr
+		width 100px
+		height 40px
+		padding 0 16px
+		border-radius 12px
+		transition .5s ease
+		transition-property color, background-color, border-color, box-shadow, transform, margin-top, height
+		span
+			position relative
+			z-index 2
+		&:before
+			content ''
+			position absolute
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			top 0
+			bottom 0
+			left 0
+			right 0
+			z-index 1
+			background $bgh
+			opacity 0
+			transition opacity .5s ease
+			pointer-events none
+			border-radius 12px
+		&:hover
+			box-shadow $bgsh
+			color $white
+			&:before
+				opacity 1
+	&__list
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		margin-bottom 25px
+		&:last-child
+			margin-bottom 0
+		li
+			display flex
+			flex-direction row
+			justify-content space-between
+			align-items center
+			width 100%
+			border-bottom 1px solid rgba($grey, .22)
+			padding-bottom 10px
+			margin-bottom 10px
+			&:last-child
+				margin-bottom 0
+				padding-bottom 0
+				border-bottom none
+	&__list-name
+		font-size 14px
+		color $darkgrey
+		font-weight 400
+		font-family 'Nunito', sans-serif
+	&__list-value
+		font-size 14px
+		color $lightgrey
+		font-weight 400
+		&--dark
+			color $darkgrey
+	&__details
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		flex-wrap wrap
+		width 100%
+		margin-bottom 25px
+		&:last-child
+			margin-bottom 0
+		li
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			width 50%
+			margin-bottom 15px
+			&:nth-child(3)
+			&:nth-child(4)
+				margin-bottom 0
+		svg
+			width 20px
+			height auto
+			fill $mainclr
+			margin-right 6px
+		span
+			font-size 14px
+			line-height 20px
+			color $lightgrey
+			font-family 'Nunito', sans-serif
+	&__share
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items flex-start
+		flex-wrap wrap
+		width 100%
+		margin-bottom 25px
+		margin-top -5px
+		&:last-child
+			margin-bottom 0
+	&__share-link
+		margin-right 15px
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		padding 0 15px
+		height 30px
+		border-radius 12px
+		color $white
+		font-size 14px
+		background-color $mainclr
+		font-family 'Nunito', sans-serif
+		svg
+			fill $white
+			margin-right 8px
+			margin-top 1px
+			transition fill .5s ease
+		&:last-child
+			margin-right 0
+		&--fb
+			background-color #3B5998
+		&--tw
+			background-color #55ACEE
+		&--link
+			background-color $lightgrey
+		&:hover
+			background-color $mainclr
+			color $white
+	@media (min-width: 768px)
+		margin-top 30px
+		&__price
+			font-size 30px
+		&__favorite
+			width 46px
+			height 46px
+			border-radius 16px
+			svg
+				width 22px
+		&__rent
+			height 46px
+			text-transform uppercase
+			width 140px
+			border-radius 16px
+			&:before
+				border-radius 16px
+		&__details
+			li
+				width 25%
+				margin-bottom 0
+	@media (min-width: 992px)
+		&__rent
+			width 120px
+		&__details
+			li
+				width 50%
+				margin-bottom 15px
+				&:nth-child(3)
+				&:nth-child(4)
+					margin-bottom 0
+	@media (min-width: 1200px)
+		&__price
+			font-size 32px
+		&__rent
+			width 160px
+			height 50px
+		&__favorite
+			width 50px
+			height 50px
+
+/*==============================
+	Step style 1
+==============================*/
+.step
+	display flex
+	flex-direction row
+	justify-content flex-start
+	align-items center
+	flex-wrap wrap
+	position relative
+	overflow hidden
+	width 100%
+	margin-top 20px
+	padding 20px
+	border-radius 20px
+	background $bgg
+	box-shadow $bgs
+	border 1px solid $white
+	&__number
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		border-radius 14px
+		width 50px
+		height 50px
+		font-family 'Nunito', sans-serif
+		line-height 100%
+		font-weight 600
+		font-size 22px
+		color $mainclr
+		background-color rgba($mainclr, .2)
+	&__title
+		font-family 'Nunito', sans-serif
+		font-size 18px
+		line-height 24px
+		font-weight 400
+		color $darkgrey
+		margin-bottom 0
+		margin-left 15px
+		width calc(100% - 65px)
+	&__text
+		display block
+		width 100%
+		font-size 16px
+		line-height 26px
+		color $lightgrey
+		margin-bottom 0
+		margin-top 15px
+		a
+			color $mainclr
+			text-decoration underline
+			&:hover
+				color $mainclr
+				text-decoration none
+	@media (min-width: 768px)
+		margin-top 24px
+
+/*==============================
+	Step style 2
+==============================*/
+.step1
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	flex-wrap wrap
+	position relative
+	margin-top 20px
+	padding 20px
+	border-radius 20px
+	background $bgg
+	border 1px solid $white
+	box-shadow $bgs
+	&__icon
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 50px
+		height 50px
+		border-radius 14px
+		background-color rgba($mainclr, .2)
+		svg
+			fill $mainclr
+			width auto
+			height 30px
+		&--purple
+			background-color rgba($purple, .2)
+			svg
+				fill $purple
+		&--red
+			background-color rgba($red, .2)
+			svg
+				fill $red
+		&--blue
+			background-color rgba($blue, .2)
+			svg
+				fill $blue
+		&--green
+			background-color rgba($green, .2)
+			svg
+				fill $green
+		&--orange
+			background-color rgba($orange, .2)
+			svg
+				fill $orange
+		&--pink
+			background-color rgba($pink, .2)
+			svg
+				fill $pink
+		&--yellow
+			background-color rgba($yellow, .2)
+			svg
+				fill $yellow
+	&__title
+		font-family 'Nunito', sans-serif
+		font-size 18px
+		line-height 24px
+		font-weight 400
+		color $darkgrey
+		margin-bottom 0
+		margin-top 20px
+	&__text
+		display block
+		width 100%
+		font-size 16px
+		line-height 26px
+		color $lightgrey
+		margin-bottom 0
+		margin-top 15px
+		a
+			color $mainclr
+			&:hover
+				color $mainclr
+				text-decoration underline
+	@media (min-width: 768px)
+		margin-top 24px
+
+/*==============================
+	Post
+==============================*/
+.post
+	position relative
+	margin-top 20px
+	border-radius 20px
+	width 100%
+	overflow hidden
+	background $bgg
+	box-shadow $bgs
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	&--carousel
+		width 290px
+		margin-bottom 10px
+	&:hover
+		.post__img
+			&:before
+				opacity .5
+	&__img
+		display block
+		width 100%
+		position relative
+		background-color $black
+		&:before
+			content ''
+			position absolute
+			display block
+			top 0
+			left 0
+			right 0
+			bottom 0
+			background linear-gradient(45deg, rgba($black, .8) 0%, rgba($black, 0) 100%)
+			opacity .1
+			transition opacity .5s ease
+			z-index 2
+		img
+			width 100%
+			position relative
+			z-index 1
+		&:hover
+			&:before
+				opacity .5
+	&__content
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		padding 20px
+		background $bgg
+		border 1px solid $white
+		border-top none
+		border-radius 0 0 20px 20px
+		height 100%
+		position relative
+	&__category
+		display inline-flex
+		flex-direction row
+		justify-content center
+		align-items center
+		font-family 'Nunito', sans-serif
+		height 30px
+		min-width 70px
+		width auto
+		color $white
+		font-size 14px
+		background-color $mainclr
+		border-radius 12px
+		padding 0 16px
+		margin-bottom 20px
+		position absolute
+		bottom 100%
+		left 20px
+		z-index 2
+		span
+			position relative
+			z-index 2
+		&:before
+			content ''
+			position absolute
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			top 0
+			bottom 0
+			left 0
+			right 0
+			z-index 1
+			background $bgh
+			opacity 0
+			transition opacity .5s ease
+			pointer-events none
+			border-radius 12px
+		&:hover
+			box-shadow $bgsh
+			color $white
+			&:before
+				opacity 1
+	&__title
+		display -webkit-box
+		-webkit-box-orient vertical
+		-webkit-line-clamp 3
+		overflow hidden
+		font-family 'Nunito', sans-serif
+		font-weight 400
+		font-size 22px
+		line-height 34px
+		color $darkgrey
+		margin-bottom 20px
+		height 68px
+		width 100%
+		a
+			color $darkgrey
+			display block
+			&:hover
+				color $mainclr
+	&__meta
+		margin-top auto
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		width 100%
+		height 20px
+	&__date
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		font-size 14px
+		color $lightgrey
+		svg
+			fill $lightgrey
+			width 16px
+			height auto
+			margin-right 5px
+	&__comments
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		font-size 14px
+		color $lightgrey
+		svg
+			fill $lightgrey
+			width 16px
+			height auto
+			margin-right 5px
+	@media (min-width: 360px)
+		&--carousel
+			width 330px
+	@media (min-width: 768px)
+		margin-top 24px
+		&--carousel
+			width 336px
+	@media (min-width: 992px)
+		&--carousel
+			width 456px
+	@media (min-width: 1200px)
+		&--carousel
+			width 356px
+	@media (min-width: 1400px)
+		&--carousel
+			width 384px
+
+/*==============================
+	Feature
+==============================*/
+.feature
+	display flex
+	flex-direction row
+	justify-content flex-start
+	align-items center
+	flex-wrap wrap
+	position relative
+	overflow hidden
+	margin-top 20px
+	padding-bottom 20px
+	border-bottom 1px solid rgba($grey, .2)
+	&__icon
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 50px
+		height 50px
+		border-radius 14px
+		background-color rgba($mainclr, .2)
+		svg
+			fill $mainclr
+			width auto
+			height 26px
+		&--purple
+			background-color rgba($purple, .2)
+			svg
+				fill $purple
+		&--red
+			background-color rgba($red, .2)
+			svg
+				fill $red
+		&--blue
+			background-color rgba($blue, .2)
+			svg
+				fill $blue
+		&--green
+			background-color rgba($green, .2)
+			svg
+				fill $green
+		&--orange
+			background-color rgba($orange, .2)
+			svg
+				fill $orange
+		&--pink
+			background-color rgba($pink, .2)
+			svg
+				fill $pink
+		&--yellow
+			background-color rgba($yellow, .2)
+			svg
+				fill $yellow
+	&__title
+		font-family 'Nunito', sans-serif
+		font-size 18px
+		line-height 26px
+		font-weight 400
+		color $darkgrey
+		margin-bottom 0
+		margin-left 15px
+		width calc(100% - 65px)
+	&__text
+		display block
+		width 100%
+		font-size 16px
+		line-height 26px
+		color $lightgrey
+		margin-bottom 0
+		margin-top 15px
+		a
+			color $mainclr
+			text-decoration underline
+			&:hover
+				color $mainclr
+				text-decoration none
+	&--last
+		border-bottom none
+		padding-bottom 0
+	@media (min-width: 768px)
+		margin-top 30px
+		padding-bottom 0
+		border-bottom none
+		padding-right 20px
+
+/*==============================
+	Accordion
+==============================*/
+.accordion
+	&__card
+		background $bgg
+		box-shadow $bgs
+		border 1px solid $white
+		border-radius 20px
+		margin-top 20px
+		button
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			position relative
+			width 100%
+			min-height 76px
+			padding 20px 80px 20px 20px
+			color $darkgrey
+			font-size 16px
+			font-weight 400
+			text-align left
+			border-bottom 1px solid transparent
+			span
+				display flex
+				flex-direction row
+				justify-content center
+				align-items center
+				width 36px
+				height 36px
+				border-radius 12px
+				background $mainclr
+				position absolute
+				right 20px
+				top 20px
+				overflow hidden
+				transition box-shadow .5s ease
+				&:before
+					content ''
+					position absolute
+					display flex
+					flex-direction row
+					justify-content center
+					align-items center
+					top 0
+					bottom 0
+					left 0
+					right 0
+					z-index 1
+					background $bgh
+					opacity 0
+					transition opacity .5s ease
+					pointer-events none
+					border-radius 12px
+				svg
+					width 20px
+					height auto
+					fill $white
+					position absolute
+					z-index 2
+					transition transform .5s ease
+					&:last-child
+						transform rotate(-90deg)
+			&:hover
+				span
+					box-shadow $bgsh
+					&:before
+						opacity 1
+			&[aria-expanded="true"]
+				border-color rgba($grey, .2)
+				span
+					box-shadow $bgsh
+					svg
+						&:last-child
+							transform rotate(0deg)
+					&:before
+						opacity 1
+		p
+			padding 0 20px
+			color $lightgrey
+			font-size 16px
+			line-height 26px
+			margin-bottom 20px
+			b
+				font-weight 600
+			&:first-child
+				padding 20px 20px 0	
+	@media (min-width: 768px)
+		&__card
+			margin-top 24px
+
+/*==============================
+	Team
+==============================*/
+.team
+	margin-top 20px
+	width 100%
+	position relative
+	overflow hidden
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	&:hover
+		.team__img
+			img
+				transform scale(1.08)
+	&__img
+		width 100%
+		border-radius 14px
+		overflow hidden
+		margin-bottom 15px
+		img
+			width 100%
+			transition transform .5s ease
+	&__name
+		display block
+		width 100%
+		font-size 18px
+		color $darkgrey
+		font-family 'Nunito', sans-serif
+		font-weight 600
+		margin-bottom 5px
+		a
+			color $white
+			&:hover
+				color $mainclr
+	&__position
+		display block
+		width 100%
+		font-size 14px
+		line-height 24px
+		color $lightgrey
+	&__social
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items flex-start
+		flex-wrap wrap
+		width 100%
+		a
+			margin-top 15px
+			margin-right 15px
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			width 20px
+			height 20px
+			position relative
+			svg
+				width 20px
+				height auto
+				fill $lightgrey
+				transition fill .5s ease
+			&:last-child
+				margin-right 0
+			&:hover
+				svg
+					fill $mainclr
+	@media (min-width: 576px)
+		padding 20px
+		background $bgg
+		box-shadow $bgs
+		border 1px solid $white
+		border-radius 20px
+	@media (min-width: 768px)
+		margin-top 24px
+
+/*==============================
+	Testimonial
+==============================*/
+.testimonial
+	margin-top 20px
+	width 100%
+	border-radius 20px
+	padding 20px
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	background $bgg
+	box-shadow $bgs
+	border 1px solid $white
+	&--carousel
+		width 290px
+		margin-bottom 10px
+	&__text
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		width 100%
+		height auto
+		min-height 230px
+		background-color $white
+		padding 20px
+		position relative
+		border-radius 14px
+		p
+			font-size 16px
+			color $lightgrey
+			font-family 'Nunito', sans-serif
+			line-height 26px
+			margin-bottom 20px
+			position relative
+			font-style italic
+			z-index 2
+			&:last-child
+				margin-bottom 0
+	&__client
+		margin-top 20px
+		position relative
+		padding-left 60px
+		display flex
+		flex-direction column
+		justify-content center
+		align-items flex-start
+		height 46px
+		img
+			width 46px !important
+			height 46px
+			position absolute
+			top 0
+			left 0
+			border-radius 14px
+		p
+			font-size 16px
+			font-family 'Nunito', sans-serif
+			color $darkgrey
+			font-weight 400
+			display block
+			line-height 100%
+			margin-bottom 8px
+		span
+			font-size 14px
+			color $lightgrey
+			line-height 100%
+	@media (min-width: 360px)
+		&--carousel
+			width 330px
+	@media (min-width: 768px)
+		margin-top 24px
+		&--carousel
+			width 336px
+		&__text
+			min-height 260px
+	@media (min-width: 992px)
+		&--carousel
+			width 456px
+		&__text
+			min-height 230px
+	@media (min-width: 1200px)
+		&--carousel
+			width 356px
+	@media (min-width: 1400px)
+		&--carousel
+			width 384px
+
+/*==============================
+	Article
+==============================*/
+.article
+	display block
+	position relative
+	width 100%
+	margin-top 25px
+	&__category
+		display inline-flex
+		flex-direction row
+		justify-content center
+		align-items center
+		font-family 'Nunito', sans-serif
+		height 30px
+		min-width 70px
+		width auto
+		color $white
+		font-size 14px
+		background-color $mainclr
+		border-radius 12px
+		padding 0 16px
+		position relative
+		span
+			position relative
+			z-index 2
+		&:before
+			content ''
+			position absolute
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			top 0
+			bottom 0
+			left 0
+			right 0
+			z-index 1
+			background $bgh
+			opacity 0
+			transition opacity .5s ease
+			pointer-events none
+			border-radius 12px
+		&:hover
+			box-shadow $bgsh
+			color $white
+			&:before
+				opacity 1
+	&__date
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		font-size 14px
+		color $lightgrey
+		height 30px
+		svg
+			fill $lightgrey
+			width 16px
+			height auto
+			margin-right 5px
+	&__content
+		position relative
+		img
+			display block
+			width 100%
+			height auto
+			margin-bottom 25px
+			border-radius 20px
+		iframe
+			display block
+			width 100%
+			height 220px
+			margin-bottom 20px
+			border-radius 20px
+			border none
+		h1
+		h2
+		h3
+		h4
+		h5
+		h6
+			font-family 'Nunito', sans-serif
+			font-weight 400
+			color $darkgrey
+			margin-bottom 15px
+			line-height 140%
+			&:last-child
+				margin-bottom 0
+		h1
+			font-size 30px
+		h2
+			font-size 28px
+		h3
+			font-size 24px
+		h4
+			font-size 22px
+		h5
+			font-size 18px
+		h6
+			font-size 16px
+		p
+			display block
+			font-size 16px
+			line-height 26px
+			font-weight 400
+			color $lightgrey
+			margin-bottom 20px
+			b
+				font-weight 600
+			a
+				color $mainclr
+				text-decoration underline
+				&:hover
+				&:focus
+					color $mainclr
+					text-decoration none
+			&:last-child
+				margin-bottom 0
+		blockquote
+			display block
+			position relative
+			font-family 'Nunito', sans-serif
+			padding 0 0 0 20px
+			font-size 18px
+			line-height 30px
+			color $lightgrey
+			font-weight 400
+			margin-bottom 20px
+			&:before
+				content ''
+				position absolute
+				display block
+				top 2px
+				bottom 2px
+				left 0
+				width 3px
+				background-color $mainclr
+				border-radius 3px
+			&:last-child
+				margin-bottom 0
+		ul
+			margin-bottom 20px
+			display block
+			li
+				font-size 16px
+				line-height 28px
+				font-weight 400
+				color $lightgrey
+				padding-left 20px
+				position relative
+				&:before
+					content ''
+					position absolute
+					display block
+					width 4px
+					height 4px
+					border-radius 50%
+					background-color $mainclr
+					left 0
+					top 50%
+					margin-top -2px
+			&:last-child
+				margin-bottom 0
+	&__meta
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		flex-wrap wrap
+		width 100%
+		margin-bottom 20px
+	@media (min-width: 576px)
+		&__content
+			iframe
+				height 290px
+	@media (min-width: 768px)
+		margin-top 30px
+		&__content
+			h1
+				font-size 36px
+			h2
+				font-size 32px
+			h3
+				font-size 28px
+			h4
+				font-size 24px
+			h5
+				font-size 20px
+			h6
+				font-size 18px
+			iframe
+				height 380px
+				margin-bottom 30px
+				margin-top 30px
+			img
+				margin-bottom 30px
+		&__meta
+			margin-bottom 25px
+	@media (min-width: 1200px)
+		&__content
+			iframe
+				height 460px
+
+/*==============================
+	Share
+==============================*/
+.share
+	margin-top 10px
+	display flex
+	flex-direction row
+	justify-content flex-start
+	align-items flex-start
+	flex-wrap wrap
+	width 100%
+	&__link
+		margin-top 20px
+		margin-right 20px
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		padding 0 15px
+		height 30px
+		border-radius 12px
+		color $white
+		font-size 14px
+		background-color $mainclr
+		font-family 'Nunito', sans-serif
+		svg
+			fill $white
+			margin-right 10px
+			margin-top 1px
+			transition fill .5s ease
+		&:last-child
+			margin-right 0
+		&--fb
+			background-color #3B5998
+		&--tw
+			background-color #55ACEE
+		&--link
+			background-color $lightgrey
+		&:hover
+			background-color $mainclr
+			color $white
+
+/*==============================
+	Comments
+==============================*/
+.comments
+	margin-top 40px
+	padding-top 40px
+	border-top 2px solid rgba($grey, .2)
+	&__title
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items flex-start
+		margin-bottom 30px
+		h4
+			color $darkgrey
+			font-weight 400
+			font-size 24px
+			line-height 100%
+			margin-bottom 0
+			position relative
+			font-family 'Nunito', sans-serif
+		span
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			width auto
+			min-width 20px
+			height 20px
+			padding 0 5px
+			border-radius 8px
+			background-color $mainclr
+			font-size 12px
+			color $white
+			font-weight 400
+			margin-left 10px
+			font-family 'Nunito', sans-serif
+	&__autor
+		display block
+		position relative
+		padding-left 55px
+		margin-bottom 20px
+	&__avatar
+		position absolute
+		top 0
+		left 0
+		width 40px
+		border-radius 14px
+	&__name
+		display block
+		font-size 16px
+		color $darkgrey
+		line-height 20px
+		font-weight 400
+		font-family 'Nunito', sans-serif
+	&__time
+		display block
+		font-size 12px
+		color $lightgrey
+		line-height 20px
+		font-weight 400
+	&__text
+		display block
+		margin-bottom 0
+		color $lightgrey
+		font-size 16px
+		line-height 26px
+		padding 20px 0
+		position relative
+		border-top 1px solid rgba($grey, .2)
+		border-bottom 1px solid rgba($grey, .2)
+		b
+			font-weight 600
+		a
+			color $mainclr
+			&:hover
+				color $mainclr
+				text-decoration underline
+		span
+			display block
+			margin-bottom 20px
+			padding 20px
+			position relative
+			min-height 80px
+			border-radius 14px
+			color $lightgrey
+			background-color $white
+	&__item
+		margin-bottom 20px
+		display block
+		background $bgg
+		box-shadow $bgs
+		border 1px solid $white
+		padding 20px
+		border-radius 20px
+		&--answer
+		&--quote
+			margin-left 20px
+	&__actions
+		display flex
+		flex-direction row
+		justify-content flex-end
+		align-items center
+		padding 20px 0 0
+		position relative
+		button
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			margin-right 20px
+			height 20px
+			span
+				font-size 12px
+				color $lightgrey
+				text-transform uppercase
+				transition color .5s ease
+				display none
+			svg
+				width 16px
+				height auto
+				fill $lightgrey
+				transition fill .5s ease
+			&:hover
+				span
+					color $darkgrey
+				svg
+					fill $mainclr
+			&:last-child
+				margin-right 0
+				svg
+					width 18px
+	&__rate
+		display inline-flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		position absolute
+		left 0
+		top 20px
+		button
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			color $lightgrey
+			font-size 14px
+			margin-right 24px
+			position relative
+			height 20px
+			svg
+				width 16px
+				height auto
+				opacity .7
+				transition opacity .5s ease
+				margin-top 1px
+			&:last-child
+				margin-right 0
+				svg
+					margin-left 8px
+					fill $red
+					width 16px
+			&:first-child
+				svg
+					margin-right 8px
+					fill $green
+					width 16px
+				&:before
+					content ''
+					position absolute
+					display block
+					left 100%
+					margin-left 12px
+					width 1px
+					height 16px
+					background-color rgba($grey, .2)
+					top 50%
+					transform translateY(-50%)
+			&:hover
+				color $darkgrey
+				svg
+					opacity 1
+	&__form
+		border-radius 20px
+		padding 20px
+		background $bgg
+		box-shadow $bgs
+		border 1px solid $white
+		margin-top 30px
+		.row
+			margin-left -10px
+			margin-right -10px
+		.col-12
+			padding-left 10px
+			padding-right 10px
+		.sign__btn
+			margin 0
+	@media (min-width: 576px)
+		&__actions
+			button
+				span
+					display block
+					margin-left 6px
+		&__form
+			.sign__btn
+				width 160px
+	@media (min-width: 768px)
+		margin-top 50px
+		padding-top 50px
+		&__item
+			&--answer
+			&--quote
+				margin-left 30px
+
+/*==============================
+	Contacts
+==============================*/
+.contacts
+	&__list
+		margin-top 20px
+		li
+			margin-bottom 15px
+			&:last-child
+				margin-bottom 0
+		a
+			font-size 16px
+			color $lightgrey
+			font-family 'Nunito', sans-serif
+			font-weight 400
+			&:hover
+				color $mainclr
+	&__social
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items flex-start
+		flex-wrap wrap
+		width 100%
+		a
+			margin-top 20px
+			margin-right 20px
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			width 20px
+			height 20px
+			position relative
+			svg
+				width 100%
+				height auto
+				fill $lightgrey
+				transition fill .5s ease
+			&:last-child
+				margin-right 0
+			&:hover
+				svg
+					fill $mainclr
+	@media (min-width: 768px)
+		&__social
+			margin-top 10px
+
+/*==============================
+	Partners
+==============================*/
+.partners
+	margin-top 60px
+	&__img
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		img
+			width 100%
+			-webkit-filter grayscale(1)
+			filter grayscale(1)
+			opacity .65
+			transition .5s ease
+		&:hover
+			img
+				-webkit-filter grayscale(0)
+				filter grayscale(0)
+				opacity 1
+	@media (min-width: 768px)
+		margin-top 70px
+
+/*==============================
+	Profile
+==============================*/
+.profile
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	background $bgg
+	box-shadow $bgs
+	border 1px solid $white
+	padding 20px 0 0 20px
+	border-radius 20px
+	position relative
+	margin-top 20px
+	&__tabs
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		overflow hidden
+		width 100%
+		li
+			margin-right 20px
+			&:last-child
+				margin-right 0
+		button
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items flex-start
+			height 40px
+			color $lightgrey
+			position relative
+			font-size 14px
+			font-family 'Nunito', sans-serif
+			white-space nowrap
+			&:hover
+				color $darkgrey
+			&:before
+				content ''
+				position absolute
+				bottom 0
+				left 0
+				right 0
+				height 3px
+				display block
+				background-color $mainclr
+				transition .5s ease
+				transform translateY(3px)
+				opacity 0
+				border-radius 3px 3px 0 0
+			&.active
+				color $darkgrey
+				cursor default
+				&:before
+					opacity 1
+					transform translateY(0)
+	@media (min-width: 576px)
+		&__tabs
+			li
+				margin-right 25px
+				&:last-child
+					margin-right 0
+	@media (min-width: 768px)
+		margin-top 30px
+		padding 0 20px
+		margin-bottom 5px
+		flex-direction row
+		justify-content space-between
+		align-items center
+		&__tabs
+			border-bottom none
+			margin-bottom 0
+			width auto
+			margin-right auto
+			li
+				margin-right 30px
+				&:last-child
+					margin-right 0
+			button
+				align-items center
+				height 70px
+
+/*==============================
+	Cart
+==============================*/
+.cart
+	position relative
+	display flex
+	flex-direction column
+	justify-content space-between
+	align-items flex-start
+	background $bgg
+	box-shadow $bgs
+	border 1px solid $white
+	width 100%
+	padding 0
+	border-radius 20px
+	min-height 400px
+	margin-top 20px
+	&__table
+		width 100%
+		min-width 800px
+		th
+			font-size 14px
+			font-weight 400
+			color $lightgrey
+			line-height 100%
+			padding 0 20px 10px 0
+			white-space nowrap
+			&:last-child
+				width 24px
+				padding 0 0 10px 0
+		td
+			font-size 16px
+			font-weight 400
+			color $darkgrey
+			padding 10px 20px 10px 0
+			a
+				color $darkgrey
+				font-family 'Nunito', sans-serif
+				font-weight 400
+				&:hover
+					color $mainclr
+			&:last-child
+				width 24px
+				padding 10px 0
+			&:first-child
+				width 70px
+	&__img
+		width 120px
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		background-color transparent
+		border-radius 14px
+		overflow hidden
+		img
+			width 100%
+			border-radius 14px
+			height auto
+	&__delete
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 18px
+		height 18px
+		svg
+			fill $grey
+			width 18px
+			height auto
+			transition fill .5s ease
+		&:hover
+			svg
+				fill $mainclr
+	&__price
+		font-size 16px
+		color $darkgrey
+		font-family 'Nunito', sans-serif
+		font-weight 600
+		span
+			font-weight 400
+			font-size 12px
+			text-decoration line-through
+			margin-left 5px
+			color $red
+	&__table-wrap
+		position relative
+		display block
+		width 100%
+		overflow auto
+		padding 20px 20px 10px
+	&__table-scroll
+		width 100%
+		display block
+	@media (min-width: 768px)
+		margin-top 24px
+		&__table-wrap
+			padding 25px 20px 10px
+		&__table
+			th
+				padding 0 20px 15px 0
+				&:last-child
+					padding 0 0 15px 0
+
+/*==============================
+	Plan
+==============================*/
+.plan
+	display block
+	margin-top 20px
+	padding 20px
+	border-radius 20px
+	background $bgg
+	box-shadow $bgs
+	border 1px solid $white
+	position relative
+	overflow hidden
+	&--active
+		background $white
+		.plan__btn
+			cursor default
+			opacity .6
+			&:before
+				display none
+			&:hover
+				box-shadow none
+	&__title
+		position relative
+		z-index 2
+		font-size 20px
+		color $mainclr
+		line-height 100%
+		display block
+		font-weight 400
+		margin-bottom 20px
+		font-family 'Nunito', sans-serif
+	&__list
+		position relative
+		z-index 2
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		li
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			margin-bottom 15px
+			font-size 16px
+			color $lightgrey
+			&:last-child
+				margin-bottom 0
+			svg
+				width 18px
+				height auto
+				margin-right 10px
+			&.red
+				svg
+					fill $red
+			&.green
+				svg
+					fill $green
+	&__price
+		position relative
+		z-index 2
+		font-family 'Nunito', sans-serif
+		font-weight 400
+		font-size 30px
+		color $darkgrey
+		margin-bottom 20px
+		padding-bottom 15px
+		border-bottom 1px solid rgba($grey, .22)
+		display block
+		line-height 100%
+		span
+			font-size 16px
+			font-weight 400
+	&__btn
+		width 100%
+		height 50px
+		border-radius 16px
+		background-color $mainclr
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		color $white
+		font-size 14px
+		position relative
+		z-index 2
+		text-transform uppercase
+		font-family 'Nunito', sans-serif
+		font-weight 600
+		margin 20px auto 0
+		transition .5s ease
+		transition-property color, background-color, border-color, box-shadow, transform, margin-top, height
+		span
+			position relative
+			z-index 2
+		&:before
+			content ''
+			position absolute
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			top 0
+			bottom 0
+			left 0
+			right 0
+			z-index 1
+			background $bgh
+			opacity 0
+			transition opacity .5s ease
+			pointer-events none
+			border-radius 16px
+		&:hover
+			box-shadow $bgsh
+			color $white
+			&:before
+				opacity 1
+	@media (min-width: 768px)
+		margin-top 24px
+
+/*==============================
+	Footer
+==============================*/
+.footer
+	background-color #e5eaf2
+	padding-top 30px
+	position relative
+	overflow hidden
+	&__logo
+		margin-top 60px
+		img
+			width auto
+			height 40px
+			display block
+	&__tagline
+		margin-top 10px
+		display block
+		font-size 14px
+		line-height 24px
+		color $lightgrey
+		margin-bottom 0
+	&__links
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		margin-top 5px
+		a
+			display inline-flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			margin-top 10px
+			color $grey
+			font-size 16px
+			svg
+				width 20px
+				height auto
+				fill $mainclr
+				margin-right 10px
+			&:hover
+				color $mainclr
+	&__social
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items flex-start
+		flex-wrap wrap
+		width 100%
+		a
+			margin-top 20px
+			margin-right 20px
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			width 20px
+			height 20px
+			position relative
+			svg
+				width 100%
+				height auto
+				fill $lightgrey
+				transition fill .5s ease
+			&:last-child
+				margin-right 0
+			&:hover
+				svg
+					fill $mainclr
+	&__content
+		position relative
+		margin-top 60px
+		padding 0 20px 20px
+		background $bgg
+		box-shadow $bgs
+		border 1px solid $white
+		border-bottom none
+		border-radius 20px 20px 0 0
+	&__copyright
+		display block
+		font-size 14px
+		color $lightgrey
+		margin-top 20px
+		font-family 'Nunito', sans-serif
+		font-weight 400
+		a
+			color $lightgrey
+			&:hover
+				color $mainclr
+	&__title
+		display block
+		margin-top 30px
+		font-size 16px
+		color $darkgrey
+		font-family 'Nunito', sans-serif
+		font-weight 600
+		margin-bottom 15px
+	&__nav
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		a
+			font-size 14px
+			line-height 24px
+			margin-bottom 12px
+			color $lightgrey
+			font-family 'Nunito', sans-serif
+			font-weight 400
+			&:last-child
+				margin-bottom 0
+			&:hover
+				color $mainclr
+	&__lang
+		position relative
+		margin-top 20px
+	&__lang-btn
+		display inline-flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		height 30px
+		img
+			width 20px
+			height auto
+			margin-right 10px
+			border-radius 4px
+		span
+			color $lightgrey
+			font-size 14px
+			line-height 20px
+			font-weight 400
+			transition color .4s ease
+		svg
+			width 14px
+			height auto
+			fill $lightgrey
+			margin-left 2px
+			margin-top 2px
+			transition .4s ease
+			transition-property transform, fill
+		&:hover
+			span
+				color $mainclr
+			svg
+				fill $mainclr
+		&[aria-expanded="true"]
+			span
+				color $mainclr
+			svg
+				fill $mainclr
+				transform rotate(180deg)
+	&__lang-dropdown
+		display flex !important
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		position absolute
+		z-index -1
+		pointer-events none
+		opacity 0
+		top 0
+		border-radius 20px
+		padding 16px
+		min-width 120px
+		transition opacity .4s ease
+		height auto
+		background $bgg
+		box-shadow $bgs
+		border 1px solid $white
+		li
+			width 100%
+			margin-bottom 15px
+			&:last-child
+				margin-bottom 0
+		a
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			img
+				width 20px
+				height auto
+				margin-right 10px
+				border-radius 4px
+			span
+				color $lightgrey
+				font-size 14px
+				line-height 20px
+				font-weight 400
+				transition color .5s ease
+			&:hover
+				span
+					color $mainclr
+		&.show
+			z-index 1000
+			pointer-events auto
+			opacity 1
+	@media (min-width: 768px)
+		padding-top 20px
+		&__content
+			margin-top 70px
+			padding 30px 20px
+			display flex
+			flex-direction row
+			justify-content space-between
+			align-items center
+			width 100%
+		&__logo
+			margin-top 50px
+		&__title
+			margin-top 50px
+		&__social
+			width auto
+			order 2
+			a
+				margin-top 0
+		&__copyright
+			margin-top 0
+			order 1
+	@media (min-width: 1200px)
+		&__social
+			display inline-flex
+			width auto
+
+/*==============================
+	Sign
+==============================*/
+.sign
+	display block
+	position relative
+	&__content
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 100%
+		height auto
+		min-height 100vh
+		padding 40px 20px
+	&__form
+		background $bgg
+		box-shadow $bgs
+		border 1px solid $white
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		border-radius 20px
+		padding 30px 20px
+		position relative
+		width 100%
+		max-width 420px
+		&--contacts
+		&--profile
+			margin-top 20px
+			max-width 100%
+			padding 20px 20px 5px
+			align-items flex-start
+			.sign__btn
+				margin 0 0 15px
+			.row
+				margin-left -10px
+				margin-right -10px
+			.col-12
+				padding-left 10px
+				padding-right 10px
+		&--profile
+			.sign__btn
+				margin 5px 0 15px
+	&__logo
+		display block
+		margin-bottom 25px
+		a
+			max-width 100%
+			width auto
+		img
+			width auto
+			height 40px
+	&__title
+		font-size 16px
+		font-weight 600
+		font-family 'Nunito', sans-serif
+		color $darkgrey
+		margin-bottom 20px
+	&__label
+		font-weight 400
+		font-size 14px
+		color $lightgrey
+		margin-bottom 5px
+		padding-left 20px
+		b
+			font-weight 600
+			color $lightgrey
+		&--modal
+			padding-left 0
+	&__input
+		background-color $white
+		border 1px solid rgba($grey, .2)
+		border-radius 16px
+		height 46px
+		position relative
+		color $darkgrey
+		font-size 16px
+		width 100%
+		padding 0 20px
+		font-family 'Nunito', sans-serif
+		&:focus
+		&:hover
+			border-color $mainclr
+	&__select
+		background url('../img/arrow2.svg') no-repeat center right 20px $white
+		background-size 18px auto
+		border 1px solid rgba($grey, .2)
+		border-radius 16px
+		height 46px
+		position relative
+		color $darkgrey
+		font-size 16px
+		width 100%
+		padding 0 20px
+		cursor pointer
+		font-family 'Nunito', sans-serif
+		&:focus
+		&:hover
+			border-color $mainclr
+	&__textarea
+		background-color $white
+		border 1px solid rgba($grey, .2)
+		border-radius 16px
+		height 144px
+		position relative
+		color $darkgrey
+		font-size 16px
+		width 100%
+		padding 15px 20px
+		resize none
+		font-family 'Nunito', sans-serif
+		&:focus
+		&:hover
+			border-color $mainclr
+	&__group
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items flex-end
+		flex-wrap wrap
+		position relative
+		margin-bottom 20px
+		width 100%
+		&--row
+			.sign__label
+				padding-left 0
+		&--checkbox
+			width 100%
+			text-align left
+			input
+				&:not(:checked)
+				&:checked
+					position absolute
+					left -9999px
+				&:not(:checked) + label
+				&:checked + label
+					font-size 14px
+					color $lightgrey
+					font-weight normal
+					position relative
+					cursor pointer
+					padding-left 32px
+					line-height 24px
+					margin 0
+					a
+						color $mainclr
+						&:hover
+							color $mainclr
+							text-decoration underline
+				&:not(:checked) + label:before
+				&:checked + label:before
+					content ''
+					position absolute
+					left 0
+					top 2px
+					width 20px
+					height 20px
+					background-color $white
+					border-radius 8px
+					border 1px solid rgba($grey, .22)
+				&:not(:checked) + label:after
+				&:checked + label:after
+					content ''
+					position absolute
+					left 5px
+					top 7px
+					width 10px
+					height 10px
+					text-align center
+					transition .5s ease
+					background-color $mainclr
+					border-radius 4px
+				&:not(:checked) + label:after
+					opacity 0
+					transform scale(0)
+				&:checked + label:after
+					opacity 1
+					transform scale(1)
+			label
+				&::-moz-selection
+					background transparent
+					color $grey
+				&::selection
+					background transparent
+					color $grey
+	&__btn
+		width 100%
+		height 50px
+		border-radius 16px
+		background-color $mainclr
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		color $white
+		font-size 14px
+		position relative
+		z-index 2
+		text-transform uppercase
+		font-family 'Nunito', sans-serif
+		font-weight 600
+		margin 15px auto
+		span
+			position relative
+			z-index 2
+		&:before
+			content ''
+			position absolute
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			top 0
+			bottom 0
+			left 0
+			right 0
+			z-index 1
+			background $bgh
+			opacity 0
+			transition opacity .5s ease
+			pointer-events none
+			border-radius 16px
+		&:hover
+			box-shadow $bgsh
+			color $white
+			&:before
+				opacity 1
+		&--modal
+			margin 10px 0 0
+	&__text
+		margin-top 15px
+		font-size 14px
+		line-height 24px
+		color $lightgrey
+		width 100%
+		text-align center
+		&:first-child
+			margin-top 0
+		a
+			position relative
+			color $mainclr
+			&:hover
+				color $mainclr
+				text-decoration underline
+		&--small
+			font-size 13px
+			line-height 20px
+			text-align left
+		&--left
+			text-align left
+	&__delimiter
+		font-size 14px
+		color $lightgrey
+		line-height 100%
+		width 100%
+		display block
+		text-align center
+	&__social
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		width 100%
+		margin-bottom 15px
+		margin-top 15px
+		a
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			height 40px
+			width calc(33% - 10px)
+			border-radius 14px
+			color $white
+			svg
+				height auto
+				fill $white
+				transition fill .5s ease
+			&.fb
+				background-color #3b5999
+				svg
+					width 10px
+			&.gl
+				background-color #df4a32
+				svg
+					width 18px
+			&.tw
+				background-color #1da1f2
+				svg
+					width 20px
+			&:hover
+				background-color $white
+				box-shadow $bgsh2
+				&.fb
+					svg
+						fill #3b5999
+				&.gl
+					svg
+						fill #df4a32
+				&.tw
+					svg
+						fill #1da1f2
+	&__value
+		font-size 24px
+		color $lightgrey
+		display block
+		font-weight 600
+		margin-left 10px
+		font-family 'Nunito', sans-serif
+	&__radio
+		position relative
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+		margin-top 5px
+		&--single
+			padding-top 20px
+			margin-top 0
+			border-top 1px solid rgba($white, .06)
+		li
+			position relative
+			overflow hidden
+			margin-bottom 10px
+			&:last-child
+				margin-bottom 0
+		input
+			&:not(:checked)
+			&:checked
+				position absolute
+				left -9999px
+		label
+			display block
+			margin 0
+			position relative
+			font-weight 400
+			cursor pointer
+			font-size 14px
+			color $grey
+			line-height 24px
+			padding-left 30px
+			transition color .5s ease
+			&:before
+				content ''
+				display block
+				position absolute
+				width 20px
+				height 20px
+				border 6px solid $grey
+				background-color transparent
+				border-radius 50%
+				left 0
+				top 2px
+				transition border-color .5s ease
+			&:hover
+				color $darkgrey
+		input:checked + label
+			color $darkgrey
+			&:before
+				border-color $mainclr
+	@media (min-width: 576px)
+		&__form
+			padding 40px
+			&--contacts
+			&--profile
+				padding 20px 20px 5px
+		&__logo
+			margin-bottom 35px
+	@media (min-width: 768px)
+		&__form
+			&--contacts
+				margin-top 30px
+				.sign__btn
+					margin 10px 0 15px
+			&--profile
+				margin-top 24px
+				.sign__btn
+					margin 10px 0 15px
+	@media (min-width: 992px)
+		&__form
+			&--profile
+				.sign__btn
+					width 160px
+
+/*==============================
+	Page 404
+==============================*/
+.page-404
+	display block
+	position relative
+	&__wrap
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		width 100%
+		height auto
+		min-height 100vh
+		padding 40px 20px
+	&__content
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		border-radius 20px
+		padding 20px
+		position relative
+		width 100%
+		max-width 420px
+		background $bgg
+		box-shadow $bgs
+		border 1px solid $white
+	&__title
+		position relative
+		color $darkgrey
+		line-height 100%
+		font-size 120px
+		margin-bottom 10px
+		font-weight 600
+		font-family 'Nunito', sans-serif
+	&__text
+		text-align center
+		display block
+		width 100%
+		color $lightgrey
+		font-size 16px
+		line-height 26px
+		margin-bottom 30px
+	&__btn
+		width 100%
+		height 50px
+		border-radius 16px
+		background-color $mainclr
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		color $white
+		font-size 14px
+		position relative
+		z-index 2
+		text-transform uppercase
+		font-family 'Nunito', sans-serif
+		font-weight 600
+		margin 0 auto
+		span
+			position relative
+			z-index 2
+		&:before
+			content ''
+			position absolute
+			display flex
+			flex-direction row
+			justify-content center
+			align-items center
+			top 0
+			bottom 0
+			left 0
+			right 0
+			z-index 1
+			background $bgh
+			opacity 0
+			transition opacity .5s ease
+			pointer-events none
+			border-radius 16px
+		&:hover
+			box-shadow $bgsh
+			color $white
+			&:before
+				opacity 1
+	@media (min-width: 576px)
+		&__content
+			padding 40px
+
+/*==============================
+	Modal
+==============================*/
+.modal
+	.modal-content
+		margin 0 auto
+		max-width 420px
+		background-color transparent
+		border none
+		border-radius 20px
+	&__content
+		position relative
+		display block
+		margin 0 auto
+		width 100%
+		max-width 420px
+		padding 20px
+		border-radius 20px
+		background $bgg
+		box-shadow $bgs
+		border 1px solid $white
+		overflow hidden
+	&__form
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		width 100%
+	&__title
+		font-family 'Nunito', sans-serif
+		font-weight 400
+		color $darkgrey
+		font-size 20px
+		line-height 26px
+		margin-bottom 20px
+	&__close
+		position absolute
+		top 15px
+		right 15px
+		z-index 1
+		svg
+			fill $grey
+			opacity .6
+			transition .5s ease
+			height auto
+			width 24px
+		&:hover
+			svg
+				opacity 1
+				fill $mainclr
+	@media (min-width: 768px)
+		&__content
+			padding 40px
+		&__title
+			margin-bottom 30px
+		&__close
+			top 36px
+			right 36px
+
+.modal-backdrop
+	background rgba($lightgrey, .5)
+
+/*==============================
+	Scrollbar-track
+==============================*/
+.scrollbar-track-y
+	background rgba($grey, .2) !important
+	top 0px !important
+	bottom 0px !important
+	height auto !important
+	width 4px !important
+	border-radius 4px !important
+	right 0px !important
+	overflow hidden
+
+.scrollbar-thumb-y
+	background $mainclr !important
+	width 4px !important
+	border-radius 4px !important
+
+.scrollbar-track-x
+	background rgba($grey, .2) !important
+	left 0px !important
+	right 0px !important
+	height 4px !important
+	width auto !important
+	border-radius 4px !important
+	bottom 0px !important
+	overflow hidden
+
+.scrollbar-thumb-x
+	background $mainclr !important
+	height 4px !important
+	border-radius 4px !important

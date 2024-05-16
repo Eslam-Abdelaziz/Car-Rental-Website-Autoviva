@@ -1,0 +1,47 @@
+﻿@using CarRental.Data.Models.Entities;
+@model Payment;
+
+@{
+    ViewData["Title"] = "Payment Success";
+}
+
+
+<div class="home">
+    <div class="home__bg"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="home__content">
+                    <div class="sign__content">
+
+                        <form  class="sign__form">
+                            <div class="header__content" style="display: flex; justify-content: center;">
+                                <div class="header__logo">
+                                    <a href="/">
+                                        <img src="/img/logo-black.svg" alt="">
+                                        <p style="text-align: center;"> Autoviva</p>
+                                    </a>
+                                </div>
+                            </div>
+       
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="custom-svg">
+                                <path d="M9 16.17l-3.59-3.59L4 14l5 5L21 6l-1.41-1.42L9 16.17z" />
+                            </svg>
+                            <h3 style="text-align:center;">Payment Successful!</h3>
+                            <p style="text-align:center;">Thank you for your payment.</p>
+                 
+                            <a href = "/Rentals/@Model.RentalId" class="sign__btn"><span>Continue To Rental.</span></a>
+                        </form>
+
+                  
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    ;
+</div>
+
