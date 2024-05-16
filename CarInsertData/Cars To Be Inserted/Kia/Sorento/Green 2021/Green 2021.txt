@@ -1,0 +1,1 @@
+KIA Sorento,KIA,Sorento,green,2,850,2021,6,false,true,18.5

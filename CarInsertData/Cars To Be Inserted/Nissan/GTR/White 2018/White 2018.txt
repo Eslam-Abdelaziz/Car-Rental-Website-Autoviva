@@ -1,0 +1,1 @@
+Nissan GT-R,Nissan,GT-R,white,4,1200,2018,4,false,false,14.5

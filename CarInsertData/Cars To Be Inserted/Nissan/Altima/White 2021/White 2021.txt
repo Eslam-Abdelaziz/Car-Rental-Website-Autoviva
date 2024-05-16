@@ -1,0 +1,1 @@
+Nissan Altima,Nissan,Altima,white,0,650,2021,4,false,true,13.7

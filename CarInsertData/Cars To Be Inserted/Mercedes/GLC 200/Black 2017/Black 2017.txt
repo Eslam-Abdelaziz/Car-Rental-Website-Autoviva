@@ -1,0 +1,1 @@
+Mercedes GLC200,Mercedes,GLC200,Black,1,650,2017,5,false,false,12.2

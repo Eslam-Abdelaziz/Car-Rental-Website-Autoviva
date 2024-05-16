@@ -1,0 +1,1 @@
+KIA Sporatge,KIA,Sporatge,green,1,750,2022,5,true,true,11.7

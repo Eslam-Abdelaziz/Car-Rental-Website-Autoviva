@@ -1,0 +1,1 @@
+Nissan Altima,Nissan,Altima,Red,0,600,2020,4,false,true,13.2

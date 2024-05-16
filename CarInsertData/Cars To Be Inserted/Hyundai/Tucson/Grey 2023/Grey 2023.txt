@@ -1,0 +1,1 @@
+Hyundai TUCSON,Hyundai,TUCSON,grey,2,950,2023,6,true,true,13.8

@@ -1,0 +1,1 @@
+Mercedes EQA,Mercedes,EQA,Silver,1,1000,2021,5,false,true,11.7

@@ -1,0 +1,1 @@
+Cheverolet Sonic,Cheverolet,Sonic,Black,3,650,2017,5,false,false,8.3

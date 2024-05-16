@@ -1,0 +1,1 @@
+KIA Cerato,KIA,Cerato,white,0,850,2021,5,false,true,14.2

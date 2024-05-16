@@ -1,0 +1,1 @@
+Nissan Patrol,Nissan,Patrol,Black,3,950,2019,8,false,false,8.2

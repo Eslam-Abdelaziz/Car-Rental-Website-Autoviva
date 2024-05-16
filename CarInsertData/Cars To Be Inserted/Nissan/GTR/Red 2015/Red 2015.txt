@@ -1,0 +1,1 @@
+Nissan GT-R,Nissan,GT-R,Red,4,1100,2015,4,false,false,16.5

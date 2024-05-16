@@ -1,0 +1,1 @@
+KIA Sporatge,KIA,Sporatge,red,1,600,2017,5,false,true,10.5

@@ -1,0 +1,1 @@
+Toyota sequoia,Toyota,sequoia,black,1,1000,2023,8,false,false,17.4

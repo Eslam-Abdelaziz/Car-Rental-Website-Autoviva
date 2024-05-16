@@ -1,0 +1,1 @@
+KIA Cerato,KIA,Cerato,Blue,0,850,2020,5,false,true,14.7

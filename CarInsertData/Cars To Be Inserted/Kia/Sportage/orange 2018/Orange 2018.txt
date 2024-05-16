@@ -1,0 +1,1 @@
+KIA Sporatge,KIA,Sporatge,orange,1,650,2018,5,false,true,10.8

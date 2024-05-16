@@ -1,0 +1,1 @@
+Cheverolet Camaro,Cheverolet,Camaro,Green,0,1000,2020,4,false,false,10.4

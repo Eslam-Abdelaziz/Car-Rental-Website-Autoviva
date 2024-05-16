@@ -1,0 +1,1 @@
+Hyundai TUCSON,Hyundai,TUCSON,blue,1,900,2023,6,true,true,13.8

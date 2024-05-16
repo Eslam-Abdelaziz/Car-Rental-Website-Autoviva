@@ -1,0 +1,1 @@
+Hyundai ELANTRA,Hyundai,ELANTRA,Black,0,850,2018,4,false,true,15

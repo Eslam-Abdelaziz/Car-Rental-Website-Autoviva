@@ -1,0 +1,1 @@
+KIA Cerato,KIA,Cerato,gray,0,750,2019,5,false,true,13.51

@@ -1,0 +1,1 @@
+Cheverolet Camaro,Cheverolet,Camaro,Blue,0,900,2019,4,false,false,10

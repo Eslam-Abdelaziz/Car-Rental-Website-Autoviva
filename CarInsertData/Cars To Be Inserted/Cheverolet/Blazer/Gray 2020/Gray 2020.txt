@@ -1,0 +1,1 @@
+Cheverolet Blazer,Cheverolet,Blazer,gray,2,900,2020,5,false,false,12.6

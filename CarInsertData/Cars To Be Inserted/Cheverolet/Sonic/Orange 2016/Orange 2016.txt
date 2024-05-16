@@ -1,0 +1,1 @@
+Cheverolet Sonic,Cheverolet,Sonic,Orange,3,550,2016,5,false,false,8.3

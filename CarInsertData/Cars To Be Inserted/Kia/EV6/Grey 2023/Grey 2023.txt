@@ -1,0 +1,1 @@
+Kia EV6,Kia,EV6,gray,0,1050,2023,5,true,true,18

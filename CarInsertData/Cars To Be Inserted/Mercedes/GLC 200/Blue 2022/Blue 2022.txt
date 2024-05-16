@@ -1,0 +1,1 @@
+Mercedes GLC200,Mercedes,GLC200,Blue,1,850,2022,5,false,true,12.5

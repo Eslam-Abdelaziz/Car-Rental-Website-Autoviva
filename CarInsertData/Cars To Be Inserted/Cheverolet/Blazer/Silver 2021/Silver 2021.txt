@@ -1,0 +1,1 @@
+Cheverolet Blazer,Cheverolet,Blazer,Silver,2,950,2021,5,false,false,12.8

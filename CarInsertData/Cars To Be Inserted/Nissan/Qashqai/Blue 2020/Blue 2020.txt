@@ -1,0 +1,1 @@
+Nissan Qashaqai,Nissan,Qashaqai,Blue,2,650,2020,5,false,true,11.3

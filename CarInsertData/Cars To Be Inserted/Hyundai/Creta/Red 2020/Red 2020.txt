@@ -1,0 +1,1 @@
+Hyundai Creta,Hyundai,Creta,Red,1,700,2020,4,false,true,17.2

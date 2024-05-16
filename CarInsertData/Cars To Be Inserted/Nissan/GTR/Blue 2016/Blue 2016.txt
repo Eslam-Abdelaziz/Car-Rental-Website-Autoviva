@@ -1,0 +1,1 @@
+Nissan GT-R,Nissan,GT-R,blue,4,1150,2016,4,false,false,16

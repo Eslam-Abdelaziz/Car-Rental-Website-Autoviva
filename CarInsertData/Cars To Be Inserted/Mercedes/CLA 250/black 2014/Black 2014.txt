@@ -1,0 +1,1 @@
+Mercedes CLA250,Mercedes,CLA250,Black,0,900,2014,5,false,false,6.6
